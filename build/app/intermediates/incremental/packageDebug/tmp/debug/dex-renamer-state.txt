@@ -1,0 +1,4 @@
+#Fri Aug 02 14:50:00 TMT 2019
+base.0=/home/shagy/AndroidStudioProjects/halkbank_app/build/app/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex
