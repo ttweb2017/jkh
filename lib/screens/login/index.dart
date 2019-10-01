@@ -72,6 +72,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
 
   @override
   Widget build(BuildContext context) {
+    Size sSize = MediaQuery.of(context).size;
     timeDilation = 0.4;
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
@@ -95,6 +96,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
                   containerGrowAnimation: containerGrowAnimation,
                 ),
                 Container(
+                  height: sSize.height - 300,
                   decoration: BoxDecoration(
                       color: Colors.white
                   ),
