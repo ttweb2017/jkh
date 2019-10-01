@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+//import 'package:flutter/material.dart';
 import 'package:halkbank_app/constants.dart';
 import 'package:halkbank_app/screens/payment/index.dart';
 import 'screens/home/index.dart';
@@ -7,7 +8,57 @@ import 'screens/profile/index.dart';
 
 class Routes {
   MyCustomRoute route;
-  Routes() {
+  Routes(){
+    runApp(CupertinoApp(
+      theme: CupertinoThemeData(
+        textTheme: CupertinoTextThemeData(
+          navLargeTitleTextStyle: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 22.0,
+            color: CupertinoColors.activeGreen,
+          ),
+        ),
+      ),
+      home: LoginScreen(),
+      onGenerateRoute: (RouteSettings settings){
+        switch (settings.name) {
+          case '/login':
+            route = MyCustomRoute(
+              builder: (_) => LoginScreen(),
+              settings: settings,
+            );
+            break;
+          case '/home':
+            route = MyCustomRoute(
+              builder: (_) => HomeScreen(),
+              settings: settings,
+            );
+            break;
+          case '/profile':
+            route = MyCustomRoute(
+              builder: (_) => ProfileScreen(),
+              settings: settings,
+            );
+            break;
+          case '/payment':
+            route = MyCustomRoute(
+              builder: (_) => PaymentScreen(returnUrl: ""),
+              settings: settings,
+            );
+            break;
+          default :
+            route = MyCustomRoute(
+              builder: (_) => LoginScreen(),
+              settings: settings,
+            );
+            break;
+        }
+
+        return route;
+      },
+    ));
+  }
+  /*Routes() {
     runApp(MaterialApp(
       title: Constants.APP_TITLE,
       theme: ThemeData(
@@ -52,10 +103,10 @@ class Routes {
         return route;
       },
     ));
-  }
+  }*/
 }
 
-class MyCustomRoute<T> extends MaterialPageRoute<T> {
+class MyCustomRoute<T> extends CupertinoPageRoute<T> {
   MyCustomRoute({WidgetBuilder builder, RouteSettings settings})
       : super(builder: builder, settings: settings);
 

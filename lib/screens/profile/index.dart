@@ -57,9 +57,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
     double thirdHeadContainerWidth = (sSize.width / 2 + 15.0);
 
     return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-
-      ),
       child: Scaffold(
         body: CustomScrollView(
           slivers: <Widget>[
