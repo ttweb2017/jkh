@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:halkbank_app/constants.dart';
 import 'package:halkbank_app/screens/login/index.dart';
+import 'package:halkbank_app/screens/payment/index.dart';
+import 'package:halkbank_app/screens/profile/index.dart';
 import 'package:halkbank_app/util/user.dart';
 import '../../components/topLogoView.dart';
 import '../../components/dashboardCard.dart';
@@ -93,8 +95,34 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
 
-    return CupertinoPageScaffold(
-      child: Scaffold(
+    return CupertinoTabScaffold(
+      tabBar: CupertinoTabBar(
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.payment, size: 52.0, color: Colors.white),
+            title: Text("Tölemek")
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_box, size: 52.0, color: Colors.white),
+            title: Text("Profilim"),
+          ),
+        ],
+      ),
+      tabBuilder: (BuildContext context, int index) {
+        assert(index >= 0 && index <= 1);
+
+        switch (index) {
+          case 0:
+            return ProfileScreen();
+            break;
+          case 1:
+            return PaymentScreen(returnUrl: "");
+            break;
+        }
+
+        return null;
+      },
+      /*child: Scaffold(
         body: ListView(
           children: <Widget>[
             Column(
@@ -138,7 +166,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             ),
           ],
         ),
-      ),
+      ),*/
     );
   }
   /*@override
