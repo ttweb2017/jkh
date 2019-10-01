@@ -96,10 +96,10 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
                   containerGrowAnimation: containerGrowAnimation,
                 ),
                 Container(
-                  height: sSize.height - 300,
+                  /*height: sSize.height - 300,
                   decoration: BoxDecoration(
                       color: Colors.white
-                  ),
+                  ),*/
                   child: FormContainer(),
                 ),
               ],

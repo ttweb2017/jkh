@@ -71,7 +71,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   backgroundImage: Constants.LOGO_PATH,
                 ),
                 Container(
-                  height: sSize.height - 300,
                   decoration: BoxDecoration(
                       color: Colors.white
                   ),
