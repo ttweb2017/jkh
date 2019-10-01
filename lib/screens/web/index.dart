@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_tabs/flutter_custom_tabs.dart';
 import 'package:halkbank_app/models/order.dart';
 import 'package:crypto/crypto.dart';
 import 'package:http/http.dart' as http;
@@ -36,7 +35,7 @@ class WebViewScreen {
     }
   }
 
-  void _launchURL(BuildContext context, String url) async {
+  /*void _launchURL(BuildContext context, String url) async {
     try {
       await launch(
         url,
@@ -58,7 +57,7 @@ class WebViewScreen {
       // An exception is thrown if browser app is not installed on Android device.
       debugPrint(e.toString());
     }
-  }
+  }*/
 
   String _formGetUrl(Order order){
     print(order.paymentId);

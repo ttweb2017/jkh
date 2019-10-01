@@ -103,7 +103,7 @@ class _FormContainerState extends State<FormContainer> with TickerProviderStateM
                 obscure: false,
                 icon: Icons.person_outline,
                 textController: _loginController,
-                inputActionType: TextInputAction.none,
+                inputActionType: TextInputAction.next,
               ),
               InputFieldArea(
                 name: "Açarsözü",
