@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:halkbank_app/constants.dart';
 import 'package:halkbank_app/screens/login/index.dart';
@@ -88,7 +89,59 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         builder: (context) => LoginScreen()
     ) ?? false;
   }
+
   @override
+  Widget build(BuildContext context) {
+
+    return CupertinoPageScaffold(
+      child: Scaffold(
+        body: ListView(
+          children: <Widget>[
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisSize: MainAxisSize.max,
+              verticalDirection: VerticalDirection.down,
+              children: <Widget>[
+                TopImage(
+                  title: _name,
+                  backgroundImage: Constants.LOGO_PATH,
+                  containerGrowAnimation: containerGrowAnimation,
+                ),
+                Container(
+                  margin: const EdgeInsets.only(top: 30.0),
+                  decoration: BoxDecoration(
+                      color: Colors.white
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      DashboardCard(
+                          icon: Icon(Icons.payment, size: 52.0, color: Colors.white),
+                          title: "Tölemek",
+                          description: "Tölegleri bu ýerden töläp bilersiňiz",
+                          marginRight: 8.0,
+                          offset: Offset(-2.0, 2.0),
+                          route: "/payment"
+                      ),
+                      DashboardCard(
+                          icon: Icon(Icons.account_box, size: 52.0, color: Colors.white),
+                          title: "Profilim",
+                          description: "Öz profiliňizi bärden görüp bilersiňiz",
+                          marginRight: 0.0,
+                          offset: Offset(2.0, 2.0),
+                          route: "/profile"
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+  /*@override
   Widget build(BuildContext context) {
     timeDilation = 0.4;
 
@@ -140,5 +193,5 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         ),
       ),
     );
-  }
+  }*/
 }
