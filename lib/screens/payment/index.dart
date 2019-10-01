@@ -1,5 +1,7 @@
 import 'dart:convert';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:halkbank_app/components/topLogoView.dart';
 import 'package:halkbank_app/constants.dart';
 import 'package:halkbank_app/models/payment.dart';
 import 'package:halkbank_app/screens/home/index.dart';
@@ -131,6 +133,57 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    return CupertinoPageScaffold(
+      child: Scaffold(
+        body: ListView(
+          children: <Widget>[
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisSize: MainAxisSize.max,
+              verticalDirection: VerticalDirection.down,
+              children: <Widget>[
+                TopImage(
+                  title: Constants.APP_TITLE,
+                  backgroundImage: Constants.LOGO_PATH,
+                ),
+                Container(
+                  child: Column(
+                    children: <Widget>[
+                      FutureBuilder<Payment>(
+                        future: _payments,
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+                            return PaymentList(payments: snapshot.data);
+                            //return Text(snapshot.data);
+                          } else if (snapshot.hasError) {
+                            //return Text("${snapshot.error}");
+                            print(snapshot.error);
+                            return Center(
+                              child: Text(
+                                  "Häzirlikçe tökeg ýok!",
+                                  style: TextStyle(color: Colors.green[800], fontWeight: FontWeight.bold, fontSize: 15.0)
+                              ),
+                            );
+                          }
+                          // By default, show a loading spinner.
+                          return CircularProgressIndicator(
+                              backgroundColor: Colors.green[800]
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+  /*@override
+  Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: _onWillPop,
       child: Scaffold(
@@ -181,5 +234,5 @@ class _PaymentScreenState extends State<PaymentScreen> {
         ),
       ),
     );
-  }
+  }*/
 }
