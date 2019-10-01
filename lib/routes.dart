@@ -12,6 +12,7 @@ class Routes {
     runApp(CupertinoApp(
       theme: CupertinoThemeData(
         textTheme: CupertinoTextThemeData(
+          primaryColor: Color.fromARGB(0, 11, 40, 18),
           navLargeTitleTextStyle: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 22.0,
