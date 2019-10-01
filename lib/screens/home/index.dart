@@ -101,10 +101,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         backgroundColor: Colors.green[800],
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_box, size: 52.0, color: Colors.white)
+            icon: Icon(Icons.account_box, size: 52.0, color: Colors.white),
+            activeIcon: Icon(Icons.account_box, size: 52.0, color: Colors.orange[800])
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.payment, size: 52.0, color: Colors.white)
+            icon: Icon(Icons.payment, size: 52.0, color: Colors.white),
+            activeIcon: Icon(Icons.payment, size: 52.0, color: Colors.orange[800])
           ),
         ],
       ),
