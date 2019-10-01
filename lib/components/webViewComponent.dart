@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
+import 'package:halkbank_app/constants.dart';
 import 'package:halkbank_app/screens/payment/index.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -29,7 +30,7 @@ class _WebViewComponentState extends State<WebViewComponent> {
     super.initState();
 
     flutterWebViewPlugin.onUrlChanged.listen((String url) {
-      if(url.contains("jkh.tmter.biz/personal")){
+      if(url.contains(Constants.APP_URL + "/personal")){
         print("redirected: " + url);
         flutterWebViewPlugin.close();
         flutterWebViewPlugin.dispose();

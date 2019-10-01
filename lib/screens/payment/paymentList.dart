@@ -88,14 +88,6 @@ class PaymentList extends StatelessWidget {
       }else{
         print("Bank Response Error Message: " + data['errorMessage']);
 
-        //TODO test dump data, remove later
-        String sign = _getSign(order);
-        await PaymentUtil.setPaymentData({
-          PaymentUtil.SIGN : sign,
-          PaymentUtil.ORDER_ID : "asdad-afsfsf-asdads-asdafsdf-asdasd",
-          PaymentUtil.ORIG_ORDER : order.paymentId.toString()
-        });
-
         Scaffold.of(context)
             .showSnackBar(SnackBar(content: Text('Serwerde ýalňyşlyk: ' + data['errorMessage'])));
       }
