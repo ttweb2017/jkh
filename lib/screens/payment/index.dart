@@ -167,9 +167,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             );
                           }
                           // By default, show a loading spinner.
-                          return CircularProgressIndicator(
-                              backgroundColor: Colors.green[800]
-                          );
+                          return const CupertinoActivityIndicator(radius: 20.0);
                         },
                       ),
                     ],
