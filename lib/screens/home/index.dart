@@ -99,12 +99,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       tabBar: CupertinoTabBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.payment, size: 52.0, color: Colors.white),
-            title: Text("Tölemek")
+            icon: Icon(Icons.account_box, size: 52.0, color: Colors.white)
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_box, size: 52.0, color: Colors.white),
-            title: Text("Profilim"),
+            icon: Icon(Icons.payment, size: 52.0, color: Colors.white)
           ),
         ],
       ),

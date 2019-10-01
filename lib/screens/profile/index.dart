@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:halkbank_app/components/topLogoView.dart';
 import 'package:halkbank_app/constants.dart';
 import 'package:halkbank_app/screens/home/index.dart';
 import 'package:halkbank_app/util/user.dart';
@@ -58,125 +59,128 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
     return CupertinoPageScaffold(
       child: Scaffold(
-        body: CustomScrollView(
-          slivers: <Widget>[
-            SliverAppBar(
-              backgroundColor: Colors.green[800],
-              floating: true,
-              pinned: true,
-              expandedHeight: 300,
-              flexibleSpace: FlexibleSpaceBar(
-                  title: Text(_name, style: TextStyle(fontSize: 15.0)),
-                  background: Image.asset(Constants.LOGO_PATH)
-              ),
-            ),
-            SliverList(
-              delegate: SliverChildListDelegate([
+        body: ListView(
+          children: <Widget>[
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisSize: MainAxisSize.max,
+              verticalDirection: VerticalDirection.down,
+              children: <Widget>[
+                TopImage(
+                  title: Constants.APP_TITLE,
+                  backgroundImage: Constants.LOGO_PATH,
+                ),
                 Container(
-                  margin: const EdgeInsets.only(top: 30.0, right: 15.0, bottom: 5.0, left: 15.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          Container(
-                            width: firstHeadContainerWidth,
-                            child: Text(
-                                "H/h",
-                                textAlign: TextAlign.start,
-                                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.green[800])
-                            ),
-                          ),
-                          Container(
-                            width: thirdHeadContainerWidth,
-                            child: Text(_xmlId, textAlign: TextAlign.end, style: TextStyle(fontSize: 14.0, fontStyle: FontStyle.italic, color: Colors.grey[700])),
-                          )
-                        ],
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(top: 2.0, bottom: 10.0),
-                        height: 1,
-                        decoration: BoxDecoration(
-                            color: Colors.grey[400]
-                        ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          Container(
-                            width: firstHeadContainerWidth,
-                            child: Text(
-                                "Köçe",
-                                textAlign: TextAlign.start,
-                                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.green[800])
-                            ),
-                          ),
-                          Container(
-                            width: thirdHeadContainerWidth,
-                            child: Text(_street, textAlign: TextAlign.end, style: TextStyle(fontSize: 14.0, fontStyle: FontStyle.italic, color: Colors.grey[700])),
-                          ),
-                        ],
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(top: 2.0, bottom: 10.0),
-                        height: 1,
-                        decoration: BoxDecoration(
-                            color: Colors.grey[400]
-                        ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          Container(
-                            width: firstHeadContainerWidth,
-                            child: Text(
-                                "Jaý",
-                                textAlign: TextAlign.start,
-                                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.green[800])
-                            ),
-                          ),
-                          Container(
-                            width: thirdHeadContainerWidth,
-                            child: Text(_house, textAlign: TextAlign.end, style: TextStyle(fontSize: 14.0, fontStyle: FontStyle.italic, color: Colors.grey[700])),
-                          ),
-                        ],
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(top: 2.0, bottom: 10.0),
-                        height: 1,
-                        decoration: BoxDecoration(
-                            color: Colors.grey[400]
-                        ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          Container(
-                            width: firstHeadContainerWidth,
-                            child: Text(
-                                "Öý",
-                                textAlign: TextAlign.start,
-                                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.green[800])
-                            ),
-                          ),
-                          Container(
-                            width: thirdHeadContainerWidth,
-                            child: Text(_flat, textAlign: TextAlign.end, style: TextStyle(fontSize: 14.0, fontStyle: FontStyle.italic, color: Colors.grey[700])),
-                          ),
-                        ],
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(top: 2.0, bottom: 10.0),
-                        height: 1,
-                        decoration: BoxDecoration(
-                            color: Colors.grey[400]
-                        ),
-                      )
-                    ],
+                  height: sSize.height - 300,
+                  decoration: BoxDecoration(
+                      color: Colors.white
                   ),
-                )
-              ]),
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 30.0, right: 15.0, bottom: 5.0, left: 15.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Container(
+                              width: firstHeadContainerWidth,
+                              child: Text(
+                                  "H/h",
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.green[800])
+                              ),
+                            ),
+                            Container(
+                              width: thirdHeadContainerWidth,
+                              child: Text(_xmlId, textAlign: TextAlign.end, style: TextStyle(fontSize: 14.0, fontStyle: FontStyle.italic, color: Colors.grey[700])),
+                            )
+                          ],
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(top: 2.0, bottom: 10.0),
+                          height: 1,
+                          decoration: BoxDecoration(
+                              color: Colors.grey[400]
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Container(
+                              width: firstHeadContainerWidth,
+                              child: Text(
+                                  "Köçe",
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.green[800])
+                              ),
+                            ),
+                            Container(
+                              width: thirdHeadContainerWidth,
+                              child: Text(_street, textAlign: TextAlign.end, style: TextStyle(fontSize: 14.0, fontStyle: FontStyle.italic, color: Colors.grey[700])),
+                            ),
+                          ],
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(top: 2.0, bottom: 10.0),
+                          height: 1,
+                          decoration: BoxDecoration(
+                              color: Colors.grey[400]
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Container(
+                              width: firstHeadContainerWidth,
+                              child: Text(
+                                  "Jaý",
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.green[800])
+                              ),
+                            ),
+                            Container(
+                              width: thirdHeadContainerWidth,
+                              child: Text(_house, textAlign: TextAlign.end, style: TextStyle(fontSize: 14.0, fontStyle: FontStyle.italic, color: Colors.grey[700])),
+                            ),
+                          ],
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(top: 2.0, bottom: 10.0),
+                          height: 1,
+                          decoration: BoxDecoration(
+                              color: Colors.grey[400]
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Container(
+                              width: firstHeadContainerWidth,
+                              child: Text(
+                                  "Öý",
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.green[800])
+                              ),
+                            ),
+                            Container(
+                              width: thirdHeadContainerWidth,
+                              child: Text(_flat, textAlign: TextAlign.end, style: TextStyle(fontSize: 14.0, fontStyle: FontStyle.italic, color: Colors.grey[700])),
+                            ),
+                          ],
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(top: 2.0, bottom: 10.0),
+                          height: 1,
+                          decoration: BoxDecoration(
+                              color: Colors.grey[400]
+                          ),
+                        )
+                      ],
+                    ),
+                  )
+                ),
+              ],
             )
           ],
         ),
