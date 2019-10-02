@@ -43,6 +43,7 @@ class _PaymentListState extends State<PaymentList> {
       margin: const EdgeInsets.only(top: 15.0),
       child: Center(
         child: Stack(
+          alignment: Alignment.center,
           children: <Widget>[
             ListView.builder(
                 shrinkWrap: true,
@@ -83,7 +84,7 @@ class _PaymentListState extends State<PaymentList> {
                         ),
                         onTap: () => _onTapItem(context, _payments.chargeList[position]),
                       ),
-                      Divider(height: 5.0),
+                      Divider(height: 10.0),
                     ],
                   );
                 }
