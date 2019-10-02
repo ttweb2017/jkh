@@ -24,7 +24,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   final String _returnUrl;
   Future<Payment> _payments;
-  String _name = "";
+  String _name = Constants.APP_TITLE;
 
   _PaymentScreenState(this._returnUrl);
 
@@ -144,7 +144,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
               verticalDirection: VerticalDirection.down,
               children: <Widget>[
                 TopImage(
-                  title: Constants.APP_TITLE,
+                  title: _name,
                   tag: "payment",
                   backgroundImage: Constants.LOGO_PATH,
                 ),

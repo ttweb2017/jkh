@@ -40,7 +40,7 @@ class _PaymentListState extends State<PaymentList> {
   Widget build(BuildContext context) {
 
     return Container(
-      margin: const EdgeInsets.only(top: 15.0),
+      margin: const EdgeInsets.only(top: 25.0),
       child: Center(
         child: Stack(
           alignment: Alignment.center,

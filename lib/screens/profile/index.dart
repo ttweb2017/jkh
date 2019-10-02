@@ -12,7 +12,7 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  String _name = '';
+  String _name = Constants.APP_TITLE;
   String _street  = '';
   String _house  = '';
   String _flat  = '';
@@ -67,7 +67,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               verticalDirection: VerticalDirection.down,
               children: <Widget>[
                 TopImage(
-                  title: Constants.APP_TITLE,
+                  title: _name,
                   tag: "Profile",
                   backgroundImage: Constants.LOGO_PATH,
                 ),
