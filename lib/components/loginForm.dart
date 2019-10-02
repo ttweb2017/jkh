@@ -119,7 +119,7 @@ class _FormContainerState extends State<FormContainer> with TickerProviderStateM
               _incorrectLogin ?
               Container(
                 child: Text(_incorrectLoginMessage, style: TextStyle(color: CupertinoColors.destructiveRed))
-              ) : Container(),
+              ) : Container(margin: EdgeInsets.only(bottom: 10.0)),
               InputFieldArea(
                 maxLen: 30,
                 hint: "AÇARSÖZ",
