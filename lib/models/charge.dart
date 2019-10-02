@@ -18,11 +18,11 @@ class Charge {
 
   factory Charge.fromJson(Map<String, dynamic> json){
     return Charge(
-      periodId: json['PERIOD_ID'],
-      serviceId: json['SERVICE_ID'],
+      periodId: int.parse(json['PERIOD_ID']),
+      serviceId: int.parse(json['SERVICE_ID']),
       serviceName: json['SERVICE_NAME'],
       meterId: json['METER_XML_ID'],
-      debt: json['DEBT_END'],
+      debt: double.parse(json['DEBT_END']),
       currencyTitle: json['CURRENCY_TITLE'],
     );
   }
