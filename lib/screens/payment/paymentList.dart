@@ -39,52 +39,59 @@ class _PaymentListState extends State<PaymentList> {
   @override
   Widget build(BuildContext context) {
 
-    return Center(
-        child: ListView.builder(
-            shrinkWrap: true,
-            physics: ClampingScrollPhysics(),
-            itemCount: _payments.chargeList.length,
-            itemBuilder: (context, position) {
-              return Column(
-                children: <Widget>[
-                  ListTile(
-                    title: Text(
-                        '${_payments.chargeList[position].serviceName}',
-                        style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Colors.green[800])
-                    ),
-                    //subtitle: Text('${payments.chargeList[position].debt}'),
-                    trailing: Column(
-                      children: <Widget>[
-                        Container(
-                            child: CircleAvatar(
-                              backgroundColor: Colors.white,
-                              radius: 25.0,
-                              child: Text(
-                                "${_payments.chargeList[position].debt}" + Constants.CURRENCY,
-                                style: TextStyle(
-                                  fontSize: 12.0,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.green[800],
+    return Container(
+      margin: const EdgeInsets.only(top: 15.0),
+      child: Center(
+        child: Stack(
+          children: <Widget>[
+            ListView.builder(
+                shrinkWrap: true,
+                physics: ClampingScrollPhysics(),
+                itemCount: _payments.chargeList.length,
+                itemBuilder: (context, position) {
+                  return Column(
+                    children: <Widget>[
+                      ListTile(
+                        title: Text(
+                            '${_payments.chargeList[position].serviceName}',
+                            style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Colors.green[800])
+                        ),
+                        //subtitle: Text('${payments.chargeList[position].debt}'),
+                        trailing: Column(
+                          children: <Widget>[
+                            Container(
+                                child: CircleAvatar(
+                                  backgroundColor: Colors.white,
+                                  radius: 25.0,
+                                  child: Text(
+                                    "${_payments.chargeList[position].debt}" + Constants.CURRENCY,
+                                    style: TextStyle(
+                                      fontSize: 12.0,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.green[800],
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
                                 ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                            padding: const EdgeInsets.all(1.0), // borde width
-                            decoration: new BoxDecoration(
-                              border: Border.all(color: Colors.green[800]),
-                              shape: BoxShape.circle,
+                                padding: const EdgeInsets.all(1.0), // border width
+                                decoration: new BoxDecoration(
+                                  border: Border.all(color: Colors.green[800]),
+                                  shape: BoxShape.circle,
+                                )
                             )
-                        )
-                      ],
-                    ),
-                    onTap: () => _onTapItem(context, _payments.chargeList[position]),
-                  ),
-                  Divider(height: 5.0),
-                  _isLoading ? const CupertinoActivityIndicator(radius: 20.0) : Container()
-                ],
-              );
-            }
-        )
+                          ],
+                        ),
+                        onTap: () => _onTapItem(context, _payments.chargeList[position]),
+                      ),
+                      Divider(height: 5.0),
+                    ],
+                  );
+                }
+            ),
+            _isLoading ? const CupertinoActivityIndicator(radius: 20.0) : Container()
+          ],
+        ),
+      )
     );
   }
 
