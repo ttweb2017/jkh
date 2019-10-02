@@ -82,7 +82,7 @@ class _InputFieldAreaState extends State<InputFieldArea> {
           hintStyle: const TextStyle(color: Color.fromRGBO(53, 102, 54, 1), fontSize: 15.0),
           contentPadding: const EdgeInsets.only(top: 5.0, right: 30.0, bottom: 5.0, left: 5.0),
         ),*/
-        onSubmitted: (value){
+        onChanged: (value){
           if(value.isEmpty){
             return widget.name + " dolduruň!";
           }
