@@ -5,7 +5,6 @@ class InputFieldArea extends StatefulWidget {
 
   InputFieldArea({
     Key key,
-    this.name,
     this.hint,
     this.obscure,
     this.icon,
@@ -15,7 +14,6 @@ class InputFieldArea extends StatefulWidget {
     this.keyboardType
   }):super(key: key);
 
-  final String name;
   final String hint;
   final bool obscure;
   final IconData icon;
@@ -36,15 +34,6 @@ class _InputFieldAreaState extends State<InputFieldArea> {
 
   @override
   void initState() {
-    /*_textController.addListener(() {
-      final text = _textController.text;
-      _textController.value = _textController.value.copyWith(
-        text: text,
-        selection:
-        TextSelection(baseOffset: text.length, extentOffset: text.length),
-        composing: TextRange.empty,
-      );
-    });*/
     super.initState();
   }
 
@@ -57,6 +46,7 @@ class _InputFieldAreaState extends State<InputFieldArea> {
   Widget build(BuildContext context) {
 
     return CupertinoTextField(
+      controller: widget.textController,
       keyboardType: widget.keyboardType,
       textInputAction: widget.inputActionType,
       maxLength: widget.maxLen,
@@ -73,14 +63,11 @@ class _InputFieldAreaState extends State<InputFieldArea> {
       decoration: BoxDecoration(
         border: Border(bottom: BorderSide(width: 0.0, color: CupertinoColors.inactiveGray)),
       ),
+      style: const TextStyle(
+        color: Color.fromRGBO(53, 102, 54, 1),
+      ),
       placeholder: widget.hint,
-      onChanged: (value){
-        if(value.isEmpty){
-          return widget.name + " dolduruň!";
-        }
-
-        return null;
-      },
+      placeholderStyle: const TextStyle(color: Color.fromRGBO(53, 102, 54, 1), fontSize: 15.0)
     );
   }
 }

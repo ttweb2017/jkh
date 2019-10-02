@@ -22,6 +22,11 @@ class _FormContainerState extends State<FormContainer> with TickerProviderStateM
   final _formKey = GlobalKey<FormState>();
   final _loginController = TextEditingController(text: "");
   final _passwordController = TextEditingController(text: "");
+  String _incorrectPasswordMessage;
+  String _incorrectLoginMessage;
+  bool _incorrectPassword;
+  bool _incorrectLogin;
+  bool _isLogged;
 
   AnimationController _loginButtonController;
   var animationStatus = 0;
@@ -34,6 +39,13 @@ class _FormContainerState extends State<FormContainer> with TickerProviderStateM
         duration: Duration(milliseconds: 500),
         vsync: this
     );
+
+    _incorrectLoginMessage = "";
+    _incorrectLogin = false;
+    _incorrectPasswordMessage = "";
+    _incorrectPassword = false;
+
+    _isLogged = false;
   }
 
   @override
@@ -43,34 +55,31 @@ class _FormContainerState extends State<FormContainer> with TickerProviderStateM
     super.dispose();
   }
 
-  Future<Null> _playAnimation() async {
-    try{
-      await _loginButtonController.forward();
-      await _loginButtonController.reverse();
-    } on TickerCanceled {}
-  }
-
-  bool _isLogged = false;
-
   //Method to get user data from server
   Future<User> _fetchUser(BuildContext context, String login, String password) async {
     User user;
-    final response = await http.post(
-        Constants.LOGIN_URL,
-        body: {'LOGIN': login, 'PASSWORD': password}
-    );
+    try{
+      final response = await http.post(
+          Constants.LOGIN_URL,
+          body: {'LOGIN': login, 'PASSWORD': password}
+      );
 
-    if (response.statusCode == 200) {
-      // If server returns an OK response, parse the JSON.
-      print("User response: " + response.body.toString());
+      if (response.statusCode == 200) {
+        // If server returns an OK response, parse the JSON.
+        print("User response: " + response.body.toString());
 
-      user = User.fromJson(json.decode(response.body));
+        user = User.fromJson(json.decode(response.body));
 
-    } else {
-      // If that response was not OK, throw an error.
-      print("User response code: " + response.statusCode.toString());
+      } else {
+        // If that response was not OK, throw an error.
+        print("User response code: " + response.statusCode.toString());
+        Scaffold.of(context)
+            .showSnackBar(SnackBar(content: Text('Serwerde ýalňyşlyk: Serwere baglanyp bolmady!')));
+      }
+    }catch(e){
+      print("Connection error: " + e.toString());
       Scaffold.of(context)
-          .showSnackBar(SnackBar(content: Text('Serwerde ýalňyşlyk: Serwere baglanyp bolmady!')));
+          .showSnackBar(SnackBar(content: Text('Internet baglantyňyzy barlaň!')));
     }
 
     return user;
@@ -100,7 +109,6 @@ class _FormContainerState extends State<FormContainer> with TickerProviderStateM
             children: <Widget>[
               InputFieldArea(
                 maxLen: 30,
-                name: "Logini",
                 hint: "LOGIN",
                 obscure: false,
                 icon: Icons.person_outline,
@@ -108,9 +116,12 @@ class _FormContainerState extends State<FormContainer> with TickerProviderStateM
                 inputActionType: TextInputAction.next,
                 keyboardType: TextInputType.number,
               ),
+              _incorrectLogin ?
+              Container(
+                child: Text(_incorrectLoginMessage, style: TextStyle(color: CupertinoColors.destructiveRed))
+              ) : Container(),
               InputFieldArea(
                 maxLen: 30,
-                name: "Açarsözü",
                 hint: "AÇARSÖZ",
                 obscure: true,
                 icon: Icons.lock_outline,
@@ -118,18 +129,48 @@ class _FormContainerState extends State<FormContainer> with TickerProviderStateM
                 inputActionType: TextInputAction.done,
                 keyboardType: TextInputType.number,
               ),
+              _incorrectPassword ?
+              Container(
+                child: Text(_incorrectPasswordMessage, style: TextStyle(color: CupertinoColors.destructiveRed)),
+              ) : Container(),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 32.0),
                 child: RaisedButton(
                     padding: const EdgeInsets.only(top: 15.0, right: 30.0, bottom: 15.0, left: 30.0),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
                     onPressed: () async {
+                      if(_loginController.text.trim().isEmpty){
+                        setState(() {
+                          _incorrectLoginMessage = "LOGIN'i dolduruň!";
+                          _incorrectLogin = true;
+                        });
+                      }else{
+                        setState(() {
+                          _incorrectLoginMessage = "";
+                          _incorrectLogin = false;
+                        });
+                      }
+
+                      if(_passwordController.text.trim().isEmpty){
+                        setState(() {
+                          _incorrectPasswordMessage = "AÇARSÖZ'ü dolduruň!";
+                          _incorrectPassword = true;
+                        });
+                      }else{
+                        setState(() {
+                          _incorrectPasswordMessage = "";
+                          _incorrectPassword = false;
+                        });
+                      }
+
                       // Validate returns true if the form is valid, or false
                       // otherwise.
-                      if(_formKey.currentState.validate()){
+                      if(_formKey.currentState.validate() && !_incorrectPassword && !_incorrectLogin){
+
                         Scaffold.of(context)
                             .showSnackBar(SnackBar(content: Text("Belgiňiz barlanýar...")));
                         await _login(_loginController.text.trim(), _passwordController.text.trim());
+
                         if(_isLogged){
                           Navigator.pushReplacementNamed(context, "/home");
                         }else{
@@ -167,52 +208,6 @@ class _FormContainerState extends State<FormContainer> with TickerProviderStateM
           _formKey.currentState.validate();
         },
       ),
-    );
-  }
-
-  Widget _buildLoginField() {
-    return const CupertinoTextField(
-      keyboardType: TextInputType.number,
-      autofocus: true,
-      textInputAction: TextInputAction.next,
-      maxLength: 30,
-      obscureText: false,
-      prefix: Icon(
-        CupertinoIcons.person_solid,
-        color: CupertinoColors.lightBackgroundGray,
-        size: 28.0,
-      ),
-      padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 12.0),
-      clearButtonMode: OverlayVisibilityMode.editing,
-      textCapitalization: TextCapitalization.none,
-      autocorrect: false,
-      decoration: BoxDecoration(
-        border: Border(bottom: BorderSide(width: 0.0, color: CupertinoColors.inactiveGray)),
-      ),
-      placeholder: 'LOGIN',
-
-    );
-  }
-
-  Widget _buildPasswordField() {
-    return const CupertinoTextField(
-      keyboardType: TextInputType.number,
-      textInputAction: TextInputAction.done,
-      maxLength: 30,
-      obscureText: true,
-      prefix: Icon(
-        CupertinoIcons.padlock_solid,
-        color: CupertinoColors.lightBackgroundGray,
-        size: 28.0,
-      ),
-      padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 12.0),
-      clearButtonMode: OverlayVisibilityMode.editing,
-      textCapitalization: TextCapitalization.none,
-      autocorrect: false,
-      decoration: BoxDecoration(
-        border: Border(bottom: BorderSide(width: 0.0, color: CupertinoColors.inactiveGray)),
-      ),
-      placeholder: 'AÇARSÖZ',
     );
   }
 }

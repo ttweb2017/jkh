@@ -1,10 +1,8 @@
-import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:halkbank_app/constants.dart';
 import 'package:halkbank_app/screens/payment/index.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewComponent extends StatefulWidget {
   final String url;
@@ -20,8 +18,6 @@ class _WebViewComponentState extends State<WebViewComponent> {
   final _key = UniqueKey();
 
   _WebViewComponentState(this._url);
-
-  Completer<WebViewController> _controller = Completer<WebViewController>();
 
   final flutterWebViewPlugin = FlutterWebviewPlugin();
 
@@ -56,7 +52,8 @@ class _WebViewComponentState extends State<WebViewComponent> {
 
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text("Onlaýn Töleg"),
+        leading: Icon(Icons.arrow_back_ios, color: Colors.white),
+        middle: Text("Onlaýn Töleg", style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.green[800],
       ),
       child: WebviewScaffold(
@@ -75,28 +72,4 @@ class _WebViewComponentState extends State<WebViewComponent> {
       ),
     );
   }
-  /*@override
-  Widget build(BuildContext context) {
-
-    return Container(
-      child: WebviewScaffold(
-        key: _key,
-        url: _url,
-        withJavascript: true,
-        appBar: AppBar(
-          title: Text("Onlaýn Töleg"),
-        ),
-      ),
-    );
-    /*return Container(
-      child: WebView(
-        key: _key,
-        javascriptMode: JavascriptMode.unrestricted,
-        initialUrl: _url,
-        onWebViewCreated: (WebViewController webViewController) {
-          _controller.complete(webViewController);
-        },
-      ),
-    );*/
-  }*/
 }
