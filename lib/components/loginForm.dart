@@ -172,7 +172,11 @@ class _FormContainerState extends State<FormContainer> with TickerProviderStateM
 
   Widget _buildLoginField() {
     return const CupertinoTextField(
+      keyboardType: TextInputType.number,
+      autofocus: true,
+      textInputAction: TextInputAction.next,
       maxLength: 30,
+      obscureText: false,
       prefix: Icon(
         CupertinoIcons.person_solid,
         color: CupertinoColors.lightBackgroundGray,
@@ -191,7 +195,10 @@ class _FormContainerState extends State<FormContainer> with TickerProviderStateM
 
   Widget _buildPasswordField() {
     return const CupertinoTextField(
+      keyboardType: TextInputType.number,
+      textInputAction: TextInputAction.done,
       maxLength: 30,
+      obscureText: true,
       prefix: Icon(
         CupertinoIcons.padlock_solid,
         color: CupertinoColors.lightBackgroundGray,
