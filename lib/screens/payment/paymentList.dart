@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:crypto/crypto.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:halkbank_app/components/webViewComponent.dart';
@@ -150,6 +151,9 @@ class PaymentList extends StatelessWidget {
 
   void _onTapItem(BuildContext context, Charge charge) async {
 
+    Scaffold.of(context)
+        .showSnackBar(SnackBar(content: Text('Töleg ýerine ýetirilýär...')));
+
     final serverData = await UserUtil.getUserData();
 
     final paymentId = await _fetchPaymentId(context, serverData, charge);
@@ -158,10 +162,13 @@ class PaymentList extends StatelessWidget {
 
     final url = await _fetchPayment(context, order);
 
+    Scaffold.of(context)
+        .showSnackBar(SnackBar(content: Text('Töleg sahypasyna iberilýär...')));
+
     if(url != ''){
       Navigator.push(
           context,
-          MaterialPageRoute(
+          CupertinoPageRoute(
               builder: (context) => WebViewComponent(url: url)
           )
       );
