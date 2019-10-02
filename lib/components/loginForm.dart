@@ -98,7 +98,8 @@ class _FormContainerState extends State<FormContainer> with TickerProviderStateM
             //mainAxisAlignment: MainAxisAlignment.spaceAround,
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              _buildNameField(),
+              _buildLoginField(),
+              _buildPasswordField(),
               InputFieldArea(
                 maxLen: 30,
                 name: "Logini",
@@ -169,8 +170,9 @@ class _FormContainerState extends State<FormContainer> with TickerProviderStateM
     );
   }
 
-  Widget _buildNameField() {
+  Widget _buildLoginField() {
     return const CupertinoTextField(
+      maxLength: 30,
       prefix: Icon(
         CupertinoIcons.person_solid,
         color: CupertinoColors.lightBackgroundGray,
@@ -178,12 +180,31 @@ class _FormContainerState extends State<FormContainer> with TickerProviderStateM
       ),
       padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 12.0),
       clearButtonMode: OverlayVisibilityMode.editing,
-      textCapitalization: TextCapitalization.words,
+      textCapitalization: TextCapitalization.none,
       autocorrect: false,
       decoration: BoxDecoration(
         border: Border(bottom: BorderSide(width: 0.0, color: CupertinoColors.inactiveGray)),
       ),
-      placeholder: 'Name',
+      placeholder: 'LOGIN',
+    );
+  }
+
+  Widget _buildPasswordField() {
+    return const CupertinoTextField(
+      maxLength: 30,
+      prefix: Icon(
+        CupertinoIcons.padlock_solid,
+        color: CupertinoColors.lightBackgroundGray,
+        size: 28.0,
+      ),
+      padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 12.0),
+      clearButtonMode: OverlayVisibilityMode.editing,
+      textCapitalization: TextCapitalization.none,
+      autocorrect: false,
+      decoration: BoxDecoration(
+        border: Border(bottom: BorderSide(width: 0.0, color: CupertinoColors.inactiveGray)),
+      ),
+      placeholder: 'AÇARSÖZ',
     );
   }
 }
