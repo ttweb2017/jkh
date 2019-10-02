@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class InputFieldArea extends StatefulWidget {
@@ -10,15 +9,13 @@ class InputFieldArea extends StatefulWidget {
     this.obscure,
     this.icon,
     this.textController,
-    this.inputActionType,
-    this.maxLen
+    this.inputActionType
   }):super(key: key);
 
   final String name;
   final String hint;
   final bool obscure;
   final IconData icon;
-  final int maxLen;
 
   final textController;
   final TextInputAction inputActionType;
@@ -32,7 +29,6 @@ class InputFieldArea extends StatefulWidget {
 
 class _InputFieldAreaState extends State<InputFieldArea> {
 
-  @override
   void initState() {
     /*_textController.addListener(() {
       final text = _textController.text;
@@ -64,15 +60,14 @@ class _InputFieldAreaState extends State<InputFieldArea> {
           ),
         ),
       ),
-      child: CupertinoTextField(
-        maxLength: widget.maxLen,
+      child: TextFormField(
         textInputAction: widget.inputActionType,
         controller: widget.textController,
         obscureText: widget.obscure,
         style: const TextStyle(
           color: Color.fromRGBO(53, 102, 54, 1),
         ),
-        /*decoration: InputDecoration(
+        decoration: InputDecoration(
           icon: Icon(
             widget.icon,
             color: Color.fromRGBO(53, 102, 54, 1),
@@ -81,8 +76,8 @@ class _InputFieldAreaState extends State<InputFieldArea> {
           hintText: widget.hint,
           hintStyle: const TextStyle(color: Color.fromRGBO(53, 102, 54, 1), fontSize: 15.0),
           contentPadding: const EdgeInsets.only(top: 5.0, right: 30.0, bottom: 5.0, left: 5.0),
-        ),*/
-        onSubmitted: (value){
+        ),
+        validator: (value){
           if(value.isEmpty){
             return widget.name + " dolduruň!";
           }

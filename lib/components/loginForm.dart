@@ -19,8 +19,8 @@ class _FormContainerState extends State<FormContainer> with TickerProviderStateM
   // Note: This is a GlobalKey<FormState>,
   // not a GlobalKey<MyCustomFormState>.
   final _formKey = GlobalKey<FormState>();
-  final _loginController = TextEditingController();
-  final _passwordController = TextEditingController();
+  final _loginController = TextEditingController(text: "");
+  final _passwordController = TextEditingController(text: "");
 
   AnimationController _loginButtonController;
   var animationStatus = 0;
@@ -98,6 +98,7 @@ class _FormContainerState extends State<FormContainer> with TickerProviderStateM
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               InputFieldArea(
+                maxLen: 30,
                 name: "Logini",
                 hint: "LOGIN",
                 obscure: false,
@@ -106,6 +107,7 @@ class _FormContainerState extends State<FormContainer> with TickerProviderStateM
                 inputActionType: TextInputAction.next,
               ),
               InputFieldArea(
+                maxLen: 30,
                 name: "Açarsözü",
                 hint: "AÇARSÖZ",
                 obscure: true,
