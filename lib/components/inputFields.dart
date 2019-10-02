@@ -11,7 +11,8 @@ class InputFieldArea extends StatefulWidget {
     this.icon,
     this.textController,
     this.inputActionType,
-    this.maxLen
+    this.maxLen,
+    this.keyboardType
   }):super(key: key);
 
   final String name;
@@ -22,6 +23,7 @@ class InputFieldArea extends StatefulWidget {
 
   final textController;
   final TextInputAction inputActionType;
+  final TextInputType keyboardType;
 
 
   @override
@@ -54,42 +56,31 @@ class _InputFieldAreaState extends State<InputFieldArea> {
   @override
   Widget build(BuildContext context) {
 
-    return Container(
-      margin: const EdgeInsets.only(top: 30.0),
+    return CupertinoTextField(
+      keyboardType: widget.keyboardType,
+      textInputAction: widget.inputActionType,
+      maxLength: widget.maxLen,
+      obscureText: widget.obscure,
+      prefix: Icon(
+        widget.icon,
+        color: CupertinoColors.lightBackgroundGray,
+        size: 28.0,
+      ),
+      padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 12.0),
+      clearButtonMode: OverlayVisibilityMode.editing,
+      textCapitalization: TextCapitalization.none,
+      autocorrect: false,
       decoration: BoxDecoration(
-        border: Border(
-          bottom: BorderSide(
-            width: 0.5,
-            color: Color.fromRGBO(53, 102, 54, 1),
-          ),
-        ),
+        border: Border(bottom: BorderSide(width: 0.0, color: CupertinoColors.inactiveGray)),
       ),
-      child: CupertinoTextField(
-        maxLength: widget.maxLen,
-        textInputAction: widget.inputActionType,
-        controller: widget.textController,
-        obscureText: widget.obscure,
-        style: const TextStyle(
-          color: Color.fromRGBO(53, 102, 54, 1),
-        ),
-        /*decoration: InputDecoration(
-          icon: Icon(
-            widget.icon,
-            color: Color.fromRGBO(53, 102, 54, 1),
-          ),
-          border: InputBorder.none,
-          hintText: widget.hint,
-          hintStyle: const TextStyle(color: Color.fromRGBO(53, 102, 54, 1), fontSize: 15.0),
-          contentPadding: const EdgeInsets.only(top: 5.0, right: 30.0, bottom: 5.0, left: 5.0),
-        ),*/
-        onChanged: (value){
-          if(value.isEmpty){
-            return widget.name + " dolduruň!";
-          }
+      placeholder: widget.hint,
+      onChanged: (value){
+        if(value.isEmpty){
+          return widget.name + " dolduruň!";
+        }
 
-          return null;
-        },
-      ),
+        return null;
+      },
     );
   }
 }

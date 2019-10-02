@@ -98,8 +98,6 @@ class _FormContainerState extends State<FormContainer> with TickerProviderStateM
             //mainAxisAlignment: MainAxisAlignment.spaceAround,
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              _buildLoginField(),
-              _buildPasswordField(),
               InputFieldArea(
                 maxLen: 30,
                 name: "Logini",
@@ -108,6 +106,7 @@ class _FormContainerState extends State<FormContainer> with TickerProviderStateM
                 icon: Icons.person_outline,
                 textController: _loginController,
                 inputActionType: TextInputAction.next,
+                keyboardType: TextInputType.number,
               ),
               InputFieldArea(
                 maxLen: 30,
@@ -117,6 +116,7 @@ class _FormContainerState extends State<FormContainer> with TickerProviderStateM
                 icon: Icons.lock_outline,
                 textController: _passwordController,
                 inputActionType: TextInputAction.done,
+                keyboardType: TextInputType.number,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 32.0),
@@ -190,6 +190,7 @@ class _FormContainerState extends State<FormContainer> with TickerProviderStateM
         border: Border(bottom: BorderSide(width: 0.0, color: CupertinoColors.inactiveGray)),
       ),
       placeholder: 'LOGIN',
+
     );
   }
 
