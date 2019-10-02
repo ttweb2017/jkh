@@ -52,7 +52,7 @@ class _WebViewComponentState extends State<WebViewComponent> {
 
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        leading: Icon(Icons.arrow_back_ios, color: Colors.white),
+        //leading: Icon(Icons.arrow_back_ios, color: Colors.white),
         middle: Text("Onlaýn Töleg", style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.green[800],
       ),
