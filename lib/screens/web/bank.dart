@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:halkbank_app/components/webViewComponent.dart';
+import 'package:halkbank_app/constants.dart';
 import 'package:halkbank_app/models/order.dart';
 import 'package:crypto/crypto.dart';
 import 'package:http/http.dart' as http;
@@ -31,7 +31,7 @@ class BankPaymentScreen extends StatelessWidget {
         formUrl = 'https://toleg.halkbank.gov.tm';
       }
     }else{
-      formUrl = 'https://toleg.halkbank.gov.tm';
+      formUrl = Constants.BASE_URL;
       throw Exception("Fail to connect banks payment API");
     }
 
@@ -40,7 +40,6 @@ class BankPaymentScreen extends StatelessWidget {
 
   String _formGetUrl(Order order){
     print(order.paymentId);
-    //int amount = (order.paymentAmount * 100).toInt();
     int amount = 100;
 
     var bytes = utf8.encode(

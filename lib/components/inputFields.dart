@@ -56,7 +56,7 @@ class _InputFieldAreaState extends State<InputFieldArea> {
         color: CupertinoColors.lightBackgroundGray,
         size: 28.0,
       ),
-      padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 12.0),
+      padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 18.0),
       clearButtonMode: OverlayVisibilityMode.editing,
       textCapitalization: TextCapitalization.none,
       autocorrect: false,

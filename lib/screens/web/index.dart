@@ -27,37 +27,12 @@ class WebViewScreen {
 
         Scaffold.of(context)
             .showSnackBar(SnackBar(content: Text('Serwerde ýalňyşlyk: ' + data['errorMessage'])));
-        //_launchURL(context, "https://toleg.halkbank.gov.tm");
 
       }
     }else{
       throw Exception("Fail to connect banks payment API");
     }
   }
-
-  /*void _launchURL(BuildContext context, String url) async {
-    try {
-      await launch(
-        url,
-        option: CustomTabsOption(
-          toolbarColor: Theme.of(context).primaryColor,
-          enableDefaultShare: true,
-          enableUrlBarHiding: true,
-          showPageTitle: false,
-          animation: CustomTabsAnimation.slideIn(),
-          extraCustomTabs: const <String>[
-            // ref. https://play.google.com/store/apps/details?id=org.mozilla.firefox
-            'org.mozilla.firefox',
-            // ref. https://play.google.com/store/apps/details?id=com.microsoft.emmx
-            'com.microsoft.emmx',
-          ],
-        ),
-      );
-    } catch (e) {
-      // An exception is thrown if browser app is not installed on Android device.
-      debugPrint(e.toString());
-    }
-  }*/
 
   String _formGetUrl(Order order){
     print(order.paymentId);
@@ -100,25 +75,4 @@ class WebViewScreen {
 
     return url;
   }
-
-  /*@override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    /*return Scaffold(
-      body: Center(
-        child: FutureBuilder<Order>(
-          future: futureOrder,
-          builder: (context, snapshot) {
-            if(snapshot.hasData){
-              _makePayment(context, snapshot.data);
-              return Container();
-            }
-            return CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.green[800]),
-            );
-          }
-        )
-      ),
-    );*/
-  }*/
 }
