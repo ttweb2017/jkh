@@ -165,7 +165,7 @@ class _PaymentListState extends State<PaymentList> {
 
   //Method to get formUrl from bank api
   Future<String> _fetchPayment(BuildContext context, Order order) async {
-    String formUrl;
+    String formUrl = "";
 
     final String url = await _formGetUrl(order);
 
