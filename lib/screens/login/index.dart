@@ -92,6 +92,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
               children: <Widget>[
                 TopImage(
                   title: Constants.APP_TITLE,
+                  tag: "login",
                   backgroundImage: Constants.LOGO_PATH,
                   containerGrowAnimation: containerGrowAnimation,
                 ),

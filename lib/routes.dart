@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
-//import 'package:flutter/material.dart';
-import 'package:halkbank_app/constants.dart';
+import 'package:flutter/material.dart';
 import 'package:halkbank_app/screens/payment/index.dart';
 import 'screens/home/index.dart';
 import 'screens/login/index.dart';
@@ -10,6 +9,10 @@ class Routes {
   MyCustomRoute route;
   Routes(){
     runApp(CupertinoApp(
+      localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
+        DefaultMaterialLocalizations.delegate,
+        DefaultWidgetsLocalizations.delegate,
+      ],
       theme: CupertinoThemeData(
         textTheme: CupertinoTextThemeData(
           primaryColor: Color.fromARGB(0, 11, 40, 18),
@@ -31,7 +34,7 @@ class Routes {
             break;
           case '/home':
             route = MyCustomRoute(
-              builder: (_) => HomeScreen(),
+              builder: (_) => HomeScreen(returnUrl: ""),
               settings: settings,
             );
             break;

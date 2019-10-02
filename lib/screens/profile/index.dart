@@ -47,7 +47,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Future<bool> _onWillPop(){
     return showDialog(
         context: context,
-        builder: (context) => HomeScreen()
+        builder: (context) => HomeScreen(returnUrl: "")
     ) ?? false;
   }
 
@@ -68,6 +68,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               children: <Widget>[
                 TopImage(
                   title: Constants.APP_TITLE,
+                  tag: "Profile",
                   backgroundImage: Constants.LOGO_PATH,
                 ),
                 Container(

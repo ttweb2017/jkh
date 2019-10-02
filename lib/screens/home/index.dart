@@ -10,24 +10,29 @@ import '../../components/dashboardCard.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 
 class HomeScreen extends StatefulWidget {
+  final String returnUrl;
+  HomeScreen({Key key, this.returnUrl}):super(key: key);
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _HomeScreenState createState() => _HomeScreenState(this.returnUrl);
 }
 
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
+  final String _returnUrl;
   Animation<double> containerGrowAnimation;
   AnimationController _screenController;
-  String _name = "Halk Hyzmatlary";
+  //String _name = "Halk Hyzmatlary";
+
+  _HomeScreenState(this._returnUrl);
 
   _getUserName() async {
     final Map<String, String> userData = await UserUtil.getUserData();
 
     // get value from saved file and change title
-    setState(() {
+    /*setState(() {
       build(context);
       _name = userData[UserUtil.FULL_NAME];
-    });
+    });*/
   }
 
   @override
@@ -101,12 +106,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         backgroundColor: Colors.green[800],
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_box, size: 52.0, color: Colors.white),
-            activeIcon: Icon(Icons.account_box, size: 52.0, color: Colors.orange[800])
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.payment, size: 52.0, color: Colors.white),
             activeIcon: Icon(Icons.payment, size: 52.0, color: Colors.orange[800])
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_box, size: 52.0, color: Colors.white),
+            activeIcon: Icon(Icons.account_box, size: 52.0, color: Colors.orange[800])
           ),
         ],
       ),
@@ -115,10 +120,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
         switch (index) {
           case 0:
-            return ProfileScreen();
+            return PaymentScreen(returnUrl: _returnUrl);
             break;
           case 1:
-            return PaymentScreen(returnUrl: "");
+            return ProfileScreen();
             break;
         }
 

@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 
 class TopImage extends StatelessWidget {
   final String title;
+  final String tag;
   //final DecorationImage backgroundImage;
   final String backgroundImage;
   final Animation<double> containerGrowAnimation;
 
-  final String TAG = 'logo';
-
-  TopImage({this.title, this.backgroundImage, this.containerGrowAnimation});
+  TopImage({this.title, this.tag, this.backgroundImage, this.containerGrowAnimation});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ class TopImage extends StatelessWidget {
     return SizedBox(
       width: screenSize.width,
       child: Hero(
-          tag: TAG,
+          tag: tag,
           child: Container(
             //width: screenSize.width,
             height: 300,

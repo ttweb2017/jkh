@@ -24,7 +24,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   final String _returnUrl;
   Future<Payment> _payments;
-  String _name = '';
+  String _name = "";
 
   _PaymentScreenState(this._returnUrl);
 
@@ -127,7 +127,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
   Future<bool> _onWillPop(){
     return showDialog(
         context: context,
-        builder: (context) => HomeScreen()
+        builder: (context) => HomeScreen(returnUrl: "")
     ) ?? false;
   }
 
@@ -145,6 +145,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
               children: <Widget>[
                 TopImage(
                   title: Constants.APP_TITLE,
+                  tag: "payment",
                   backgroundImage: Constants.LOGO_PATH,
                 ),
                 Container(

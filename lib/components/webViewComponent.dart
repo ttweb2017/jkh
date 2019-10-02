@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:halkbank_app/constants.dart';
@@ -36,7 +37,7 @@ class _WebViewComponentState extends State<WebViewComponent> {
         flutterWebViewPlugin.dispose();
         Navigator.push(
             context,
-            MaterialPageRoute(
+            CupertinoPageRoute(
                 builder: (context) => PaymentScreen(returnUrl: url)
             )
         );
@@ -51,6 +52,30 @@ class _WebViewComponentState extends State<WebViewComponent> {
   }
 
   @override
+  Widget build(BuildContext context) {
+
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text("Onlaýn Töleg"),
+        backgroundColor: Colors.green[800],
+      ),
+      child: WebviewScaffold(
+        key: _key,
+        url: _url,
+        withJavascript: true,
+        withZoom: true,
+        withLocalStorage: true,
+        //hidden: true,
+        initialChild: Container(
+          color: Colors.green[800],
+          child: const Center(
+            child: Text('Ýüklenýär.....'),
+          ),
+        ),
+      ),
+    );
+  }
+  /*@override
   Widget build(BuildContext context) {
 
     return Container(
@@ -73,5 +98,5 @@ class _WebViewComponentState extends State<WebViewComponent> {
         },
       ),
     );*/
-  }
+  }*/
 }
