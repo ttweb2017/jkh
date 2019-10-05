@@ -14,8 +14,11 @@ class Routes {
         DefaultWidgetsLocalizations.delegate,
       ],
       theme: CupertinoThemeData(
+        primaryColor: Colors.green[800],
+        barBackgroundColor: Colors.green[800],
         textTheme: CupertinoTextThemeData(
-          primaryColor: Color.fromARGB(0, 11, 40, 18),
+          primaryColor: Colors.green[800],
+          textStyle: TextStyle(color: Colors.black),
           navLargeTitleTextStyle: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 22.0,
