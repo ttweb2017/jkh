@@ -396,10 +396,6 @@
         "source": "/home/shagy/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0.aar/8dbc1c1126a4e78fff4ae783c99277eb/res/drawable-xxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
-        "merged": "/home/shagy/AndroidStudioProjects/halkbank_app/build/app/intermediates/res/merged/debug/anim_slide_in_right.xml.flat",
-        "source": "/home/shagy/AndroidStudioProjects/halkbank_app/build/flutter_custom_tabs/intermediates/packaged_res/debug/anim/slide_in_right.xml"
-    },
-    {
         "merged": "/home/shagy/AndroidStudioProjects/halkbank_app/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
         "source": "/home/shagy/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0.aar/8dbc1c1126a4e78fff4ae783c99277eb/res/drawable-hdpi-v4/abc_switch_track_mtrl_alpha.9.png"
     },
@@ -446,10 +442,6 @@
     {
         "merged": "/home/shagy/AndroidStudioProjects/halkbank_app/build/app/intermediates/res/merged/debug/layout_abc_action_mode_close_item_material.xml.flat",
         "source": "/home/shagy/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0.aar/8dbc1c1126a4e78fff4ae783c99277eb/res/layout/abc_action_mode_close_item_material.xml"
-    },
-    {
-        "merged": "/home/shagy/AndroidStudioProjects/halkbank_app/build/app/intermediates/res/merged/debug/layout_browser_actions_context_menu_row.xml.flat",
-        "source": "/home/shagy/.gradle/caches/transforms-1/files-1.1/browser-1.0.0.aar/ee8dba6c4544f9bcb3d645aa189f0b8b/res/layout/browser_actions_context_menu_row.xml"
     },
     {
         "merged": "/home/shagy/AndroidStudioProjects/halkbank_app/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
@@ -880,10 +872,6 @@
         "source": "/home/shagy/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/6e84aa80ee722abc6cce80ad47d81570/res/drawable-mdpi-v4/notification_bg_normal.9.png"
     },
     {
-        "merged": "/home/shagy/AndroidStudioProjects/halkbank_app/build/app/intermediates/res/merged/debug/anim_slide_out_left.xml.flat",
-        "source": "/home/shagy/AndroidStudioProjects/halkbank_app/build/flutter_custom_tabs/intermediates/packaged_res/debug/anim/slide_out_left.xml"
-    },
-    {
         "merged": "/home/shagy/AndroidStudioProjects/halkbank_app/build/app/intermediates/res/merged/debug/layout_abc_screen_simple_overlay_action_mode.xml.flat",
         "source": "/home/shagy/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0.aar/8dbc1c1126a4e78fff4ae783c99277eb/res/layout/abc_screen_simple_overlay_action_mode.xml"
     },
@@ -1150,10 +1138,6 @@
     {
         "merged": "/home/shagy/AndroidStudioProjects/halkbank_app/build/app/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
         "source": "/home/shagy/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0.aar/8dbc1c1126a4e78fff4ae783c99277eb/res/drawable-xxhdpi-v4/abc_list_pressed_holo_dark.9.png"
-    },
-    {
-        "merged": "/home/shagy/AndroidStudioProjects/halkbank_app/build/app/intermediates/res/merged/debug/layout_browser_actions_context_menu_page.xml.flat",
-        "source": "/home/shagy/.gradle/caches/transforms-1/files-1.1/browser-1.0.0.aar/ee8dba6c4544f9bcb3d645aa189f0b8b/res/layout/browser_actions_context_menu_page.xml"
     },
     {
         "merged": "/home/shagy/AndroidStudioProjects/halkbank_app/build/app/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",

@@ -6,16 +6,12 @@ INJECTED from /home/shagy/AndroidStudioProjects/halkbank_app/android/app/src/mai
 INJECTED from /home/shagy/AndroidStudioProjects/halkbank_app/android/app/src/main/AndroidManifest.xml:1:1-33:12
 MERGED from /home/shagy/AndroidStudioProjects/halkbank_app/android/app/src/main/AndroidManifest.xml:1:1-33:12
 MERGED from [:shared_preferences] /home/shagy/AndroidStudioProjects/halkbank_app/build/shared_preferences/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
-MERGED from [:url_launcher] /home/shagy/AndroidStudioProjects/halkbank_app/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-14:12
 MERGED from [:flutter_webview_plugin] /home/shagy/AndroidStudioProjects/halkbank_app/build/flutter_webview_plugin/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-21:12
 MERGED from [:webview_flutter] /home/shagy/AndroidStudioProjects/halkbank_app/build/webview_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
-MERGED from [:flutter_custom_tabs] /home/shagy/AndroidStudioProjects/halkbank_app/build/flutter_custom_tabs/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.appcompat:appcompat:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0.aar/8dbc1c1126a4e78fff4ae783c99277eb/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.webkit:webkit:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/webkit-1.0.0.aar/bf53cc8e1d204bdbce4126bee4a8edee/AndroidManifest.xml:17:1-22:12
-MERGED from [com.github.droibit.customtabslauncher:launcher:1.4.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/launcher-1.4.0.aar/18b221a837a213df468fc390f1bd811c/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.fragment:fragment:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/dcb75c56a1183c8f41a9fe5395fb5377/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/d3621b1695e13bc52147d261bb02b7e8/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.browser:browser:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/browser-1.0.0.aar/ee8dba6c4544f9bcb3d645aa189f0b8b/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/ceb01593f2df17fab168bc51fe030e79/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/89afd0ca4427f1749061d2ab30a8d186/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.0.0.aar/a8e43cc531de429ae3c184504388d015/AndroidManifest.xml:17:1-22:12
@@ -35,10 +31,10 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] /home/shagy/.gradle/cache
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/334f0633620e6830b03b968b0b453f3d/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/8ba7d35dc31442b1e87c23b91fe0d97c/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/a89b380532a992dbb095ca41d6f1f2d8/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.interpolator:interpolator:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/e0db7d58a87cde0628c2bdfc6c24a1cf/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/5bfa093902fabb30e72ec963c020bb48/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/dbfb38f729bdff62bfa327ebd468ddf0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/a99b9573184e85b79373029fbf01157b/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/e0db7d58a87cde0628c2bdfc6c24a1cf/AndroidManifest.xml:17:1-22:12
 INJECTED from /home/shagy/AndroidStudioProjects/halkbank_app/android/app/src/debug/AndroidManifest.xml:1:1-7:12
 INJECTED from /home/shagy/AndroidStudioProjects/halkbank_app/android/app/src/debug/AndroidManifest.xml:1:1-7:12
 INJECTED from /home/shagy/AndroidStudioProjects/halkbank_app/android/app/src/debug/AndroidManifest.xml:1:1-7:12
@@ -58,8 +54,6 @@ INJECTED from /home/shagy/AndroidStudioProjects/halkbank_app/android/app/src/deb
 		ADDED from /home/shagy/AndroidStudioProjects/halkbank_app/android/app/src/main/AndroidManifest.xml:1:11-69
 application
 ADDED from /home/shagy/AndroidStudioProjects/halkbank_app/android/app/src/main/AndroidManifest.xml:9:5-32:19
-MERGED from [:url_launcher] /home/shagy/AndroidStudioProjects/halkbank_app/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-12:19
-MERGED from [:url_launcher] /home/shagy/AndroidStudioProjects/halkbank_app/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:7:5-12:19
 MERGED from [:flutter_webview_plugin] /home/shagy/AndroidStudioProjects/halkbank_app/build/flutter_webview_plugin/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:5-19:19
 MERGED from [:flutter_webview_plugin] /home/shagy/AndroidStudioProjects/halkbank_app/build/flutter_webview_plugin/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:5-19:19
 MERGED from [androidx.core:core:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/6e84aa80ee722abc6cce80ad47d81570/AndroidManifest.xml:22:5-89
@@ -110,26 +104,18 @@ INJECTED from /home/shagy/AndroidStudioProjects/halkbank_app/android/app/src/mai
 INJECTED from /home/shagy/AndroidStudioProjects/halkbank_app/android/app/src/main/AndroidManifest.xml
 MERGED from [:shared_preferences] /home/shagy/AndroidStudioProjects/halkbank_app/build/shared_preferences/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences] /home/shagy/AndroidStudioProjects/halkbank_app/build/shared_preferences/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:url_launcher] /home/shagy/AndroidStudioProjects/halkbank_app/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:url_launcher] /home/shagy/AndroidStudioProjects/halkbank_app/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
 MERGED from [:flutter_webview_plugin] /home/shagy/AndroidStudioProjects/halkbank_app/build/flutter_webview_plugin/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:6:5-44
 MERGED from [:flutter_webview_plugin] /home/shagy/AndroidStudioProjects/halkbank_app/build/flutter_webview_plugin/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:6:5-44
 MERGED from [:webview_flutter] /home/shagy/AndroidStudioProjects/halkbank_app/build/webview_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
 MERGED from [:webview_flutter] /home/shagy/AndroidStudioProjects/halkbank_app/build/webview_flutter/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_custom_tabs] /home/shagy/AndroidStudioProjects/halkbank_app/build/flutter_custom_tabs/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_custom_tabs] /home/shagy/AndroidStudioProjects/halkbank_app/build/flutter_custom_tabs/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:5:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0.aar/8dbc1c1126a4e78fff4ae783c99277eb/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0.aar/8dbc1c1126a4e78fff4ae783c99277eb/AndroidManifest.xml:20:5-44
 MERGED from [androidx.webkit:webkit:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/webkit-1.0.0.aar/bf53cc8e1d204bdbce4126bee4a8edee/AndroidManifest.xml:20:5-44
 MERGED from [androidx.webkit:webkit:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/webkit-1.0.0.aar/bf53cc8e1d204bdbce4126bee4a8edee/AndroidManifest.xml:20:5-44
-MERGED from [com.github.droibit.customtabslauncher:launcher:1.4.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/launcher-1.4.0.aar/18b221a837a213df468fc390f1bd811c/AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.droibit.customtabslauncher:launcher:1.4.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/launcher-1.4.0.aar/18b221a837a213df468fc390f1bd811c/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.fragment:fragment:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/dcb75c56a1183c8f41a9fe5395fb5377/AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/dcb75c56a1183c8f41a9fe5395fb5377/AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/d3621b1695e13bc52147d261bb02b7e8/AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/d3621b1695e13bc52147d261bb02b7e8/AndroidManifest.xml:20:5-44
-MERGED from [androidx.browser:browser:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/browser-1.0.0.aar/ee8dba6c4544f9bcb3d645aa189f0b8b/AndroidManifest.xml:20:5-44
-MERGED from [androidx.browser:browser:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/browser-1.0.0.aar/ee8dba6c4544f9bcb3d645aa189f0b8b/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/ceb01593f2df17fab168bc51fe030e79/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/ceb01593f2df17fab168bc51fe030e79/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/89afd0ca4427f1749061d2ab30a8d186/AndroidManifest.xml:20:5-44
@@ -168,14 +154,14 @@ MERGED from [androidx.print:print:1.0.0] /home/shagy/.gradle/caches/transforms-1
 MERGED from [androidx.print:print:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/8ba7d35dc31442b1e87c23b91fe0d97c/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/a89b380532a992dbb095ca41d6f1f2d8/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/a89b380532a992dbb095ca41d6f1f2d8/AndroidManifest.xml:20:5-44
-MERGED from [androidx.interpolator:interpolator:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/e0db7d58a87cde0628c2bdfc6c24a1cf/AndroidManifest.xml:20:5-44
-MERGED from [androidx.interpolator:interpolator:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/e0db7d58a87cde0628c2bdfc6c24a1cf/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/5bfa093902fabb30e72ec963c020bb48/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/5bfa093902fabb30e72ec963c020bb48/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/dbfb38f729bdff62bfa327ebd468ddf0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/dbfb38f729bdff62bfa327ebd468ddf0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/a99b9573184e85b79373029fbf01157b/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/a99b9573184e85b79373029fbf01157b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/e0db7d58a87cde0628c2bdfc6c24a1cf/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/shagy/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/e0db7d58a87cde0628c2bdfc6c24a1cf/AndroidManifest.xml:20:5-44
 INJECTED from /home/shagy/AndroidStudioProjects/halkbank_app/android/app/src/debug/AndroidManifest.xml
 INJECTED from /home/shagy/AndroidStudioProjects/halkbank_app/android/app/src/debug/AndroidManifest.xml
 	android:targetSdkVersion
@@ -188,14 +174,6 @@ uses-permission#android.permission.INTERNET
 ADDED from /home/shagy/AndroidStudioProjects/halkbank_app/android/app/src/debug/AndroidManifest.xml:6:5-66
 	android:name
 		ADDED from /home/shagy/AndroidStudioProjects/halkbank_app/android/app/src/debug/AndroidManifest.xml:6:22-64
-activity#io.flutter.plugins.urllauncher.UrlLauncherPlugin$WebViewActivity
-ADDED from [:url_launcher] /home/shagy/AndroidStudioProjects/halkbank_app/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:8:9-11:74
-	android:exported
-		ADDED from [:url_launcher] /home/shagy/AndroidStudioProjects/halkbank_app/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:10:13-37
-	android:theme
-		ADDED from [:url_launcher] /home/shagy/AndroidStudioProjects/halkbank_app/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:11:13-71
-	android:name
-		ADDED from [:url_launcher] /home/shagy/AndroidStudioProjects/halkbank_app/build/url_launcher/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:9:13-92
 provider#androidx.core.content.FileProvider
 ADDED from [:flutter_webview_plugin] /home/shagy/AndroidStudioProjects/halkbank_app/build/flutter_webview_plugin/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:9:9-18:20
 	android:grantUriPermissions

@@ -49,10 +49,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="io.flutter.plugins.urllauncher.UrlLauncherPlugin$WebViewActivity"
-            android:exported="false"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
