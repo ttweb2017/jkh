@@ -153,14 +153,16 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   tag: "payment",
                   backgroundImage: Constants.LOGO_PATH,
                 ),
-                InputFieldArea(
-                  maxLen: 6,
-                  hint: "Avans",
-                  obscure: false,
-                  icon: Icons.person_outline,
-                  inputActionType: TextInputAction.next,
-                  keyboardType: TextInputType.number,
-                  textController: _loginController,
+                Container(
+                  child: InputFieldArea(
+                    maxLen: 6,
+                    hint: "Avans",
+                    obscure: false,
+                    icon: Icons.person_outline,
+                    inputActionType: TextInputAction.next,
+                    keyboardType: TextInputType.number,
+                    textController: _loginController,
+                  ),
                 ),
                 RaisedButton(
                   child: Text("tolemek"),
@@ -168,6 +170,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   textColor: Colors.green[800],
                   padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                   splashColor: Colors.green[800],
+                ),
+                Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5.0)
                 ),
                 Container(
                   child: Column(
@@ -204,6 +209,6 @@ class _PaymentScreenState extends State<PaymentScreen> {
   }
 
   _prePay(){
-    print("pay avans clicked");
+    print("pay avans clicked: " + _loginController.text.trim());
   }
 }
