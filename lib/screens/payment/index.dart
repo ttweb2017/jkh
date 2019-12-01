@@ -153,29 +153,21 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   tag: "payment",
                   backgroundImage: Constants.LOGO_PATH,
                 ),
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 15.0),
-                  child: Row(
-                    //mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      InputFieldArea(
-                        maxLen: 6,
-                        hint: "Avans",
-                        obscure: false,
-                        icon: Icons.person_outline,
-                        inputActionType: TextInputAction.next,
-                        keyboardType: TextInputType.number,
-                        textController: _loginController,
-                      ),
-                      RaisedButton(
-                        child: Text("tolemek"),
-                        onPressed: _prePay,
-                        textColor: Colors.green[800],
-                        padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                        splashColor: Colors.green[800],
-                      )
-                    ],
-                  ),
+                InputFieldArea(
+                  maxLen: 6,
+                  hint: "Avans",
+                  obscure: false,
+                  icon: Icons.person_outline,
+                  inputActionType: TextInputAction.next,
+                  keyboardType: TextInputType.number,
+                  textController: _loginController,
+                ),
+                RaisedButton(
+                  child: Text("tolemek"),
+                  onPressed: _prePay,
+                  textColor: Colors.green[800],
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                  splashColor: Colors.green[800],
                 ),
                 Container(
                   child: Column(
