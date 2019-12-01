@@ -21,10 +21,13 @@ class Payment {
 
 
   factory Payment.fromJson(Map<String, dynamic> json) {
-    var charges = new List();
-    charges = json['TKM_PAYMENT_CHARGES'] as List;
+    var charges = json['TKM_PAYMENT_CHARGES'] as List;
+    List<Charge> chargeList = new List();
     //print("charges length" + charges.length.toString());
-    List<Charge> chargeList = charges.map((i) => Charge.fromJson(i)).toList();
+    if(charges != null){
+      chargeList = charges.map((i) => Charge.fromJson(i)).toList();
+    }
+
     chargeList.add(Charge(
       serviceName: "Jemi",
       serviceId: 0,
