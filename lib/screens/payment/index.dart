@@ -161,7 +161,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       hint: "Avans",
                       obscure: false,
                       icon: Icons.payment,
-                      inputActionType: TextInputAction.next,
+                      inputActionType: TextInputAction.done,
                       keyboardType: TextInputType.numberWithOptions(decimal: true),
                       textController: _loginController,
                     ),
