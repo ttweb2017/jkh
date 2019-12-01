@@ -156,7 +156,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 Container(
                   padding: EdgeInsets.symmetric(vertical: 15.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    //mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
                       InputFieldArea(
                         maxLen: 6,
