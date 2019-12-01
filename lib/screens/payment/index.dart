@@ -154,14 +154,17 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   backgroundImage: Constants.LOGO_PATH,
                 ),
                 Container(
-                  child: InputFieldArea(
-                    maxLen: 6,
-                    hint: "Avans",
-                    obscure: false,
-                    icon: Icons.person_outline,
-                    inputActionType: TextInputAction.next,
-                    keyboardType: TextInputType.number,
-                    textController: _loginController,
+                  width: 150.0,
+                  child: Center(
+                    child: InputFieldArea(
+                      maxLen: 6,
+                      hint: "Avans",
+                      obscure: false,
+                      icon: Icons.payment,
+                      inputActionType: TextInputAction.next,
+                      keyboardType: TextInputType.number,
+                      textController: _loginController,
+                    ),
                   ),
                 ),
                 RaisedButton(
