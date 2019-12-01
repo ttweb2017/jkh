@@ -162,7 +162,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       obscure: false,
                       icon: Icons.payment,
                       inputActionType: TextInputAction.next,
-                      keyboardType: TextInputType.number,
+                      keyboardType: TextInputType.numberWithOptions(decimal: true),
                       textController: _loginController,
                     ),
                   ),
