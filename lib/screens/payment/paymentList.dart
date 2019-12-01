@@ -48,7 +48,7 @@ class _PaymentListState extends State<PaymentList> {
             ListView.builder(
                 shrinkWrap: true,
                 physics: ClampingScrollPhysics(),
-                itemCount: _payments.chargeList.length,
+                itemCount: _payments.chargeList != null ? _payments.chargeList.length : 0,
                 itemBuilder: (context, position) {
                   return Column(
                     children: <Widget>[
