@@ -140,6 +140,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
   Widget build(BuildContext context) {
 
     return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        backgroundColor: Colors.green[800],
+      ),
       child: Scaffold(
         body: GestureDetector(
           onTap: (){
