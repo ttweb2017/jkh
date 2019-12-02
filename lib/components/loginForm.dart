@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:halkbank_app/constants.dart';
+import 'package:halkbank_app/screens/home/index.dart';
 import 'package:halkbank_app/util/user.dart';
 import './inputFields.dart';
 import '../models/user.dart';
@@ -172,7 +173,13 @@ class _FormContainerState extends State<FormContainer> with TickerProviderStateM
                         await _login(_loginController.text.trim(), _passwordController.text.trim());
 
                         if(_isLogged){
-                          Navigator.pushNamed(context, "/home");
+                          //Navigator.pushNamed(context, "/home");
+                          Navigator.of(context, rootNavigator: true).push(
+                            CupertinoPageRoute<bool>(
+                              fullscreenDialog: true,
+                              builder: (BuildContext context) => HomeScreen(returnUrl: ""),
+                            ),
+                          );
                         }else{
                           Scaffold.of(context)
                               .showSnackBar(SnackBar(content: Text("Login ýa-da açarsözuňiz ýalňyş!")));
