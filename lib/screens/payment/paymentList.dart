@@ -55,7 +55,7 @@ class _PaymentListState extends State<PaymentList> {
                       ListTile(
                         title: Text(
                             '${_payments.chargeList[position].serviceName}',
-                            style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Colors.green[800])
+                            style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Color(0xFF356736))
                         ),
                         //subtitle: Text('${payments.chargeList[position].debt}'),
                         trailing: Column(
@@ -69,14 +69,14 @@ class _PaymentListState extends State<PaymentList> {
                                     style: TextStyle(
                                       fontSize: 12.0,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.green[800],
+                                      color: Color(0xFF356736),
                                     ),
                                     textAlign: TextAlign.center,
                                   ),
                                 ),
                                 padding: const EdgeInsets.all(1.0), // border width
                                 decoration: new BoxDecoration(
-                                  border: Border.all(color: Colors.green[800]),
+                                  border: Border.all(color: Color(0xFF356736)),
                                   shape: BoxShape.circle,
                                 )
                             )

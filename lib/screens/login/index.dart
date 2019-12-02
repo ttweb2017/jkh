@@ -77,13 +77,12 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
-    return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
+    return Scaffold(
+      appBar: AppBar(
         backgroundColor: Color(0xFF356736),
-        border: null,
       ),
       backgroundColor: Color(0xFFFFFFFF),//0x805C6BC0
-      child: Stack(
+      body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
           Container(
