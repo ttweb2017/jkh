@@ -141,72 +141,77 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
     return CupertinoPageScaffold(
       child: Scaffold(
-        body: ListView(
-          children: <Widget>[
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              mainAxisSize: MainAxisSize.max,
-              verticalDirection: VerticalDirection.down,
-              children: <Widget>[
-                TopImage(
-                  title: _name,
-                  tag: "payment",
-                  backgroundImage: Constants.LOGO_PATH,
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 50.0, right: 30.0, bottom: 5.0, left: 30.0),
-                  child: Center(
-                    child: InputFieldArea(
-                      maxLen: 6,
-                      hint: "Avans",
-                      obscure: false,
-                      icon: Icons.payment,
-                      inputActionType: TextInputAction.done,
-                      keyboardType: TextInputType.numberWithOptions(decimal: true),
-                      textController: _loginController,
+        body: GestureDetector(
+          onTap: (){
+            FocusScope.of(context).requestFocus(new FocusNode());
+          },
+          child: ListView(
+            children: <Widget>[
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
+                verticalDirection: VerticalDirection.down,
+                children: <Widget>[
+                  TopImage(
+                    title: _name,
+                    tag: "payment",
+                    backgroundImage: Constants.LOGO_PATH,
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 50.0, right: 30.0, bottom: 5.0, left: 30.0),
+                    child: Center(
+                      child: InputFieldArea(
+                        maxLen: 6,
+                        hint: "Avans",
+                        obscure: false,
+                        icon: Icons.payment,
+                        inputActionType: TextInputAction.done,
+                        keyboardType: TextInputType.numberWithOptions(decimal: true),
+                        textController: _loginController,
+                      ),
                     ),
                   ),
-                ),
-                RaisedButton(
-                  child: Text("tolemek"),
-                  onPressed: _prePay,
-                  textColor: Colors.green[800],
-                  padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                  splashColor: Colors.green[800],
-                ),
-                Padding(
-                    padding: EdgeInsets.symmetric(vertical: 5.0)
-                ),
-                Container(
-                  child: Column(
-                    children: <Widget>[
-                      FutureBuilder<Payment>(
-                        future: _payments,
-                        builder: (context, snapshot) {
-                          if (snapshot.hasData) {
-                            return PaymentList(payments: snapshot.data);
-                            //return Text(snapshot.data);
-                          } else if (snapshot.hasError) {
-                            //return Text("${snapshot.error}");
-                            print(snapshot.error);
-                            return Center(
-                              child: Text(
-                                  "Häzirlikçe tökeg ýok!",
-                                  style: TextStyle(color: Colors.green[800], fontWeight: FontWeight.bold, fontSize: 15.0)
-                              ),
-                            );
-                          }
-                          // By default, show a loading spinner.
-                          return const CupertinoActivityIndicator(radius: 20.0);
-                        },
-                      ),
-                    ],
+                  RaisedButton(
+                    child: Text("tolemek"),
+                    onPressed: _prePay,
+                    textColor: Colors.green[800],
+                    padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                    splashColor: Colors.green[800],
                   ),
-                ),
-              ],
-            ),
-          ],
-        ),
+                  Padding(
+                      padding: EdgeInsets.symmetric(vertical: 5.0)
+                  ),
+                  Container(
+                    child: Column(
+                      children: <Widget>[
+                        FutureBuilder<Payment>(
+                          future: _payments,
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+                              return PaymentList(payments: snapshot.data);
+                              //return Text(snapshot.data);
+                            } else if (snapshot.hasError) {
+                              //return Text("${snapshot.error}");
+                              print(snapshot.error);
+                              return Center(
+                                child: Text(
+                                    "Häzirlikçe tökeg ýok!",
+                                    style: TextStyle(color: Colors.green[800], fontWeight: FontWeight.bold, fontSize: 15.0)
+                                ),
+                              );
+                            }
+                            // By default, show a loading spinner.
+                            return const CupertinoActivityIndicator(radius: 20.0);
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        )
       ),
     );
   }
