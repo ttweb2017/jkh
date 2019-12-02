@@ -128,20 +128,27 @@ class _PaymentListState extends State<PaymentList> {
   }
 
   _prePay(BuildContext context){
+    FocusScope.of(context).requestFocus(new FocusNode());
     /*Scaffold.of(context)
         .showSnackBar(SnackBar(content: Text("pay avans clicked: " + _loginController.text.trim())));*/
     //FocusScope.of(context).requestFocus(new FocusNode());
     print("pay avans clicked: " + _loginController.text.trim());
-    Charge charge = Charge(
-      currencyTitle: "TMT",
-      debt: double.parse(_loginController.text.trim()),
-      meterId: "",
-      periodId: 0,
-      serviceId: 0,
-      serviceName: "Pre Payment"
-    );
 
-    _onTapItem(context, charge);
+    if(_loginController.text.trim().length != 0 && double.parse(_loginController.text.trim()) != 0.0){
+      Charge charge = Charge(
+          currencyTitle: "TMT",
+          debt: double.parse(_loginController.text.trim()),
+          meterId: "",
+          periodId: 0,
+          serviceId: 0,
+          serviceName: "Pre Payment"
+      );
+
+      _onTapItem(context, charge);
+    }else{
+      Scaffold.of(context)
+          .showSnackBar(SnackBar(content: Text("Töleg jemi 0 TMT ýa da boş bolmaly däl!")));
+    }
   }
 
   //Method to register an order in the server and return its id
