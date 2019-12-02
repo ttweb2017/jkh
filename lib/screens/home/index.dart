@@ -62,7 +62,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
     return CupertinoApp(
       theme: CupertinoThemeData(
-        primaryColor: Colors.green[800]
+        primaryColor: Colors.green[800],
+        brightness: Brightness.dark,
+        barBackgroundColor: Colors.green[800]
       ),
       home: CupertinoTabScaffold(
           backgroundColor: Colors.green[800],
