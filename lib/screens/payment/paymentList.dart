@@ -146,6 +146,7 @@ class _PaymentListState extends State<PaymentList> {
       if(response.statusCode == 200){
         var payment = json.decode(response.body);
         paymentId = payment['PAYMENT_ID'];
+        print("PSYMENT ID::: " + paymentId.toString());
       }else{
         print("Payment Response code: " + response.statusCode.toString());
         Scaffold.of(context)
