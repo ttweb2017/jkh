@@ -266,7 +266,10 @@ class _PaymentListState extends State<PaymentList> {
 
   //Method to form url to make request to bank
   Future<String> _formGetUrl(Order order) async {
-    print(order.paymentId);
+    if(order == null){
+      return "";
+    }
+    print("Payment ID:::" + order.paymentId.toString());
     int amount = (order.paymentAmount * 100).toInt();
 
     String sign = _getSign(order);
