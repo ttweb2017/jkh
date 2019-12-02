@@ -43,6 +43,7 @@ class _PaymentListState extends State<PaymentList> {
 
     return GestureDetector(
       onTap: (){
+        print("Gesture Detected, remove input here :)");
         FocusScope.of(context).requestFocus(new FocusNode());
       },
       child: Container(
