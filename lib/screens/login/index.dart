@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'dart:io';
 import 'package:halkbank_app/constants.dart';
 import '../../components/topLogoView.dart';
 import '../../components/loginForm.dart';
@@ -77,49 +76,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xFF356736),
-      ),
-      backgroundColor: Color(0xFFFFFFFF),//0x805C6BC0
-      body: Stack(
-        fit: StackFit.expand,
-        children: <Widget>[
-          Container(
-            decoration: BoxDecoration(color: Color(0xFFFFFFFF)),//0x805C6BC0
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Expanded(
-                flex: 2,
-                child: Container(
-                  child: TopImage(
-                    title: Constants.APP_TITLE,
-                    tag: "login",
-                    backgroundImage: Constants.LOGO_PATH,
-                    containerGrowAnimation: containerGrowAnimation,
-                  )
-                ),
-              ),
-              Expanded(
-                flex: 3,
-                child: Container(
-                  /*height: sSize.height - 300,
-                  decoration: BoxDecoration(
-                      color: Colors.white
-                  ),*/
-                  child: FormContainer(),
-                )
-              )
-            ],
-          )
-        ],
-      ),
-    );
-  }
-
-    /*return CupertinoPageScaffold(
+    return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         backgroundColor: Color(0xFF356736),
         border: null,
@@ -151,5 +108,5 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
         ),
       ),
     );
-  }*/
+  }
 }
