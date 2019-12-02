@@ -303,6 +303,8 @@ class _PaymentListState extends State<PaymentList> {
 
     final paymentId = await _fetchPaymentId(context, serverData, charge);
 
+    print("Payment ID: " + paymentId.toString());
+
     final order = await _fetchOrder(context, serverData, paymentId);
 
     final url = await _fetchPayment(context, order);
