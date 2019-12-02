@@ -88,29 +88,34 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
           border: null,
         ),
         child: Scaffold(
-          body: ListView(
-            children: <Widget>[
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                mainAxisSize: MainAxisSize.max,
-                verticalDirection: VerticalDirection.down,
-                children: <Widget>[
-                  TopImage(
-                    title: Constants.APP_TITLE,
-                    tag: "login",
-                    backgroundImage: Constants.LOGO_PATH,
-                    containerGrowAnimation: containerGrowAnimation,
-                  ),
-                  Container(
-                    /*height: sSize.height - 300,
+          body: GestureDetector(
+            onTap: (){
+              FocusScope.of(context).requestFocus(new FocusNode());
+            },
+            child: ListView(
+              children: <Widget>[
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.max,
+                  verticalDirection: VerticalDirection.down,
+                  children: <Widget>[
+                    TopImage(
+                      title: Constants.APP_TITLE,
+                      tag: "login",
+                      backgroundImage: Constants.LOGO_PATH,
+                      containerGrowAnimation: containerGrowAnimation,
+                    ),
+                    Container(
+                      /*height: sSize.height - 300,
                   decoration: BoxDecoration(
                       color: Colors.white
                   ),*/
-                    child: FormContainer(),
-                  ),
-                ],
-              ),
-            ],
+                      child: FormContainer(),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

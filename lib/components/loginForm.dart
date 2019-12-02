@@ -172,7 +172,7 @@ class _FormContainerState extends State<FormContainer> with TickerProviderStateM
                         await _login(_loginController.text.trim(), _passwordController.text.trim());
 
                         if(_isLogged){
-                          Navigator.pushReplacementNamed(context, "/home");
+                          Navigator.pushNamed(context, "/home");
                         }else{
                           Scaffold.of(context)
                               .showSnackBar(SnackBar(content: Text("Login ýa-da açarsözuňiz ýalňyş!")));

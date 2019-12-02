@@ -144,55 +144,50 @@ class _PaymentScreenState extends State<PaymentScreen> {
         border: null,
       ),
       child: Scaffold(
-        body: GestureDetector(
-          onTap: (){
-            FocusScope.of(context).requestFocus(new FocusNode());
-          },
-          child: ListView(
-            children: <Widget>[
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                mainAxisSize: MainAxisSize.max,
-                verticalDirection: VerticalDirection.down,
-                children: <Widget>[
-                  TopImage(
-                    title: _name,
-                    tag: "payment",
-                    backgroundImage: Constants.LOGO_PATH,
+        body: ListView(
+          children: <Widget>[
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisSize: MainAxisSize.max,
+              verticalDirection: VerticalDirection.down,
+              children: <Widget>[
+                TopImage(
+                  title: _name,
+                  tag: "payment",
+                  backgroundImage: Constants.LOGO_PATH,
+                ),
+                Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5.0)
+                ),
+                Container(
+                  child: Column(
+                    children: <Widget>[
+                      FutureBuilder<Payment>(
+                        future: _payments,
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+                            return PaymentList(payments: snapshot.data);
+                            //return Text(snapshot.data);
+                          } else if (snapshot.hasError) {
+                            //return Text("${snapshot.error}");
+                            print(snapshot.error);
+                            return Center(
+                              child: Text(
+                                  "Häzirlikçe tökeg ýok!",
+                                  style: TextStyle(color: Color(0xFF356736), fontWeight: FontWeight.bold, fontSize: 15.0)
+                              ),
+                            );
+                          }
+                          // By default, show a loading spinner.
+                          return const CupertinoActivityIndicator(radius: 15.0);
+                        },
+                      ),
+                    ],
                   ),
-                  Padding(
-                      padding: EdgeInsets.symmetric(vertical: 5.0)
-                  ),
-                  Container(
-                    child: Column(
-                      children: <Widget>[
-                        FutureBuilder<Payment>(
-                          future: _payments,
-                          builder: (context, snapshot) {
-                            if (snapshot.hasData) {
-                              return PaymentList(payments: snapshot.data);
-                              //return Text(snapshot.data);
-                            } else if (snapshot.hasError) {
-                              //return Text("${snapshot.error}");
-                              print(snapshot.error);
-                              return Center(
-                                child: Text(
-                                    "Häzirlikçe tökeg ýok!",
-                                    style: TextStyle(color: Color(0xFF356736), fontWeight: FontWeight.bold, fontSize: 15.0)
-                                ),
-                              );
-                            }
-                            // By default, show a loading spinner.
-                            return const CupertinoActivityIndicator(radius: 15.0);
-                          },
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
+                ),
+              ],
+            ),
+          ],
         )
       ),
     );
