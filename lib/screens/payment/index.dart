@@ -23,7 +23,6 @@ class PaymentScreen extends StatefulWidget {
 
 class _PaymentScreenState extends State<PaymentScreen> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-  final _loginController = TextEditingController(text: "");
   final String _returnUrl;
   Future<Payment> _payments;
   String _name = Constants.APP_TITLE;
@@ -147,7 +146,6 @@ class _PaymentScreenState extends State<PaymentScreen> {
       child: Scaffold(
         body: GestureDetector(
           onTap: (){
-            print("tap guesy");
             FocusScope.of(context).requestFocus(new FocusNode());
           },
           child: ListView(
@@ -161,27 +159,6 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     title: _name,
                     tag: "payment",
                     backgroundImage: Constants.LOGO_PATH,
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 50.0, right: 30.0, bottom: 5.0, left: 30.0),
-                    child: Center(
-                      child: InputFieldArea(
-                        maxLen: 6,
-                        hint: "Avans",
-                        obscure: false,
-                        icon: Icons.payment,
-                        inputActionType: TextInputAction.done,
-                        keyboardType: TextInputType.numberWithOptions(decimal: true),
-                        textController: _loginController,
-                      ),
-                    ),
-                  ),
-                  RaisedButton(
-                    child: Text("tolemek"),
-                    onPressed: _prePay,
-                    textColor: Color(0xFF356736),
-                    padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                    splashColor: Color(0xFF356736),
                   ),
                   Padding(
                       padding: EdgeInsets.symmetric(vertical: 5.0)
@@ -206,7 +183,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                               );
                             }
                             // By default, show a loading spinner.
-                            return const CupertinoActivityIndicator(radius: 20.0);
+                            return const CupertinoActivityIndicator(radius: 15.0);
                           },
                         ),
                       ],
@@ -219,9 +196,5 @@ class _PaymentScreenState extends State<PaymentScreen> {
         )
       ),
     );
-  }
-
-  _prePay(){
-    print("pay avans clicked: " + _loginController.text.trim());
   }
 }

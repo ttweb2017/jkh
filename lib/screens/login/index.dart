@@ -76,35 +76,42 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
-    return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        backgroundColor: Color(0xFF356736),
-        border: null,
+    return CupertinoApp(
+      theme: CupertinoThemeData(
+          primaryColor: Color(0xFF356736),
+          brightness: Brightness.dark,
+          barBackgroundColor: Color(0xFF356736)
       ),
-      child: Scaffold(
-        body: ListView(
-          children: <Widget>[
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              mainAxisSize: MainAxisSize.max,
-              verticalDirection: VerticalDirection.down,
-              children: <Widget>[
-                TopImage(
-                  title: Constants.APP_TITLE,
-                  tag: "login",
-                  backgroundImage: Constants.LOGO_PATH,
-                  containerGrowAnimation: containerGrowAnimation,
-                ),
-                Container(
-                  /*height: sSize.height - 300,
+      home: CupertinoPageScaffold(
+        navigationBar: CupertinoNavigationBar(
+          backgroundColor: Color(0xFF356736),
+          border: null,
+        ),
+        child: Scaffold(
+          body: ListView(
+            children: <Widget>[
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
+                verticalDirection: VerticalDirection.down,
+                children: <Widget>[
+                  TopImage(
+                    title: Constants.APP_TITLE,
+                    tag: "login",
+                    backgroundImage: Constants.LOGO_PATH,
+                    containerGrowAnimation: containerGrowAnimation,
+                  ),
+                  Container(
+                    /*height: sSize.height - 300,
                   decoration: BoxDecoration(
                       color: Colors.white
                   ),*/
-                  child: FormContainer(),
-                ),
-              ],
-            ),
-          ],
+                    child: FormContainer(),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

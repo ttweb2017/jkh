@@ -3,6 +3,7 @@ import 'package:crypto/crypto.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
+import 'package:halkbank_app/components/inputFields.dart';
 import 'package:halkbank_app/components/webViewComponent.dart';
 import 'package:halkbank_app/constants.dart';
 import 'package:halkbank_app/models/charge.dart';
@@ -22,6 +23,7 @@ class PaymentList extends StatefulWidget {
 }
 
 class _PaymentListState extends State<PaymentList> {
+  final _loginController = TextEditingController(text: "");
   bool _isLoading;
   final Payment _payments;
   final flutterWebViewPlugin = new FlutterWebviewPlugin();
@@ -45,6 +47,30 @@ class _PaymentListState extends State<PaymentList> {
         child: Stack(
           alignment: Alignment.center,
           children: <Widget>[
+            Container(
+              margin: EdgeInsets.only(top: 50.0, right: 30.0, bottom: 5.0, left: 30.0),
+              child: Center(
+                child: InputFieldArea(
+                  maxLen: 6,
+                  hint: "Tölegiň jemi TMT",
+                  obscure: false,
+                  icon: Icons.payment,
+                  inputActionType: TextInputAction.done,
+                  keyboardType: TextInputType.numberWithOptions(decimal: true),
+                  textController: _loginController,
+                ),
+              ),
+            ),
+            RaisedButton(
+              child: Text("Tölemek"),
+              onPressed: _prePay,
+              textColor: Color(0xFF356736),
+              padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+              splashColor: Color(0xFF356736),
+            ),
+            Padding(
+                padding: EdgeInsets.symmetric(vertical: 5.0)
+            ),
             ListView.builder(
                 shrinkWrap: true,
                 physics: ClampingScrollPhysics(),
@@ -89,11 +115,17 @@ class _PaymentListState extends State<PaymentList> {
                   );
                 }
             ),
-            _isLoading ? const CupertinoActivityIndicator(radius: 20.0) : Container()
+            _isLoading ? const CupertinoActivityIndicator(radius: 15.0) : Container()
           ],
         ),
       )
     );
+  }
+
+  _prePay(){
+    Scaffold.of(context)
+        .showSnackBar(SnackBar(content: Text("pay avans clicked: " + _loginController.text.trim())));
+    print("pay avans clicked: " + _loginController.text.trim());
   }
 
   //Method to register an order in the server and return its id
