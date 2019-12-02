@@ -218,6 +218,15 @@ class _PaymentListState extends State<PaymentList> {
     String formUrl = "";
 
     final String url = await _formGetUrl(order);
+
+    if(url == ""){
+      setState(() {
+        _isLoading = false;
+      });
+
+      return formUrl;
+    }
+
     final response = await http.get(url);
 
     try{
@@ -323,19 +332,19 @@ class _PaymentListState extends State<PaymentList> {
 
     final paymentId = await _fetchPaymentId(context, serverData, charge);
 
-    print("Payment ID: " + paymentId.toString());
-
     final order = await _fetchOrder(context, serverData, paymentId);
 
     final url = await _fetchPayment(context, order);
 
-    if(url.isNotEmpty){
-      Navigator.push(
-          context,
-          CupertinoPageRoute(
-              builder: (context) => WebViewComponent(url: url)
-          )
-      );
+    if(url != ""){
+      if(url.isNotEmpty){
+        Navigator.push(
+            context,
+            CupertinoPageRoute(
+                builder: (context) => WebViewComponent(url: url)
+            )
+        );
+      }
     }
   }
 
