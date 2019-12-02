@@ -62,7 +62,7 @@ class _PaymentListState extends State<PaymentList> {
             ),
             RaisedButton(
               child: Text("Tölemek"),
-              onPressed: _prePay(context),
+              onPressed: _prePay,
               textColor: Color(0xFF356736),
               padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
               splashColor: Color(0xFF356736),
@@ -127,14 +127,15 @@ class _PaymentListState extends State<PaymentList> {
     );
   }
 
-  _prePay(BuildContext context){
+  _prePay(){
     FocusScope.of(context).requestFocus(new FocusNode());
     /*Scaffold.of(context)
         .showSnackBar(SnackBar(content: Text("pay avans clicked: " + _loginController.text.trim())));*/
     //FocusScope.of(context).requestFocus(new FocusNode());
     print("pay avans clicked: " + _loginController.text.trim());
 
-    if(_loginController.text.trim().length != 0 && double.parse(_loginController.text.trim()) != 0.0){
+    if(_loginController.text.trim().length != 0
+        && double.parse(_loginController.text.trim()) != 0.0){
       Charge charge = Charge(
           currencyTitle: "TMT",
           debt: double.parse(_loginController.text.trim()),
