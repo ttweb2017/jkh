@@ -170,7 +170,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             //return Text(snapshot.data);
                           } else if (snapshot.hasError) {
                             //return Text("${snapshot.error}");
-                            print(snapshot.error);
+                            print("Snapshot of Payment List:::" + snapshot.error);
                             return Center(
                               child: Text(
                                   "Häzirlikçe tökeg ýok!",
