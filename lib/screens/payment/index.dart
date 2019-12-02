@@ -143,6 +143,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
       child: Scaffold(
         body: GestureDetector(
           onTap: (){
+            print("tap guesy");
             FocusScope.of(context).requestFocus(new FocusNode());
           },
           child: ListView(
