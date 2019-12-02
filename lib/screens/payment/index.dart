@@ -141,7 +141,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        backgroundColor: Colors.green[800],
+        backgroundColor: Color(0xFF356736),
       ),
       child: Scaffold(
         body: GestureDetector(
@@ -178,9 +178,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   RaisedButton(
                     child: Text("tolemek"),
                     onPressed: _prePay,
-                    textColor: Colors.green[800],
+                    textColor: Color(0xFF356736),
                     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                    splashColor: Colors.green[800],
+                    splashColor: Color(0xFF356736),
                   ),
                   Padding(
                       padding: EdgeInsets.symmetric(vertical: 5.0)
@@ -200,7 +200,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                               return Center(
                                 child: Text(
                                     "Häzirlikçe tökeg ýok!",
-                                    style: TextStyle(color: Colors.green[800], fontWeight: FontWeight.bold, fontSize: 15.0)
+                                    style: TextStyle(color: Color(0xFF356736), fontWeight: FontWeight.bold, fontSize: 15.0)
                                 ),
                               );
                             }

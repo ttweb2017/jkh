@@ -62,14 +62,14 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
     return CupertinoApp(
       theme: CupertinoThemeData(
-        primaryColor: Colors.green[800],
+        primaryColor: Color(0xFF356736),
         brightness: Brightness.dark,
-        barBackgroundColor: Colors.green[800]
+        barBackgroundColor: Color(0xFF356736)
       ),
       home: CupertinoTabScaffold(
-          backgroundColor: Colors.green[800],
+          backgroundColor: Color(0xFF356736),
           tabBar: CupertinoTabBar(
-            backgroundColor: Colors.green[800],
+            backgroundColor: Color(0xFF356736),
             items: <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                   icon: Icon(Icons.payment, size: 52.0, color: Colors.white),
