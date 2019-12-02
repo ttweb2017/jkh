@@ -93,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Expanded(
-                flex: 3,
+                flex: 2,
                 child: Container(
                   child: TopImage(
                     title: Constants.APP_TITLE,
@@ -104,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
                 ),
               ),
               Expanded(
-                flex: 1,
+                flex: 3,
                 child: Container(
                   /*height: sSize.height - 300,
                   decoration: BoxDecoration(
