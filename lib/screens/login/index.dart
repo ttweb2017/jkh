@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:io';
@@ -76,11 +77,54 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
-    return WillPopScope(
-      onWillPop: () {
-        exit(0);
-        return;
-      },
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        backgroundColor: Color(0xFF356736),
+        border: null,
+      ),
+      backgroundColor: Color(0xFFFFFFFF),//0x805C6BC0
+      child: Stack(
+        fit: StackFit.expand,
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(color: Color(0xFFFFFFFF)),//0x805C6BC0
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Expanded(
+                flex: 3,
+                child: Container(
+                  child: TopImage(
+                    title: Constants.APP_TITLE,
+                    tag: "login",
+                    backgroundImage: Constants.LOGO_PATH,
+                    containerGrowAnimation: containerGrowAnimation,
+                  )
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Container(
+                  /*height: sSize.height - 300,
+                  decoration: BoxDecoration(
+                      color: Colors.white
+                  ),*/
+                  child: FormContainer(),
+                )
+              )
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+    /*return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        backgroundColor: Color(0xFF356736),
+        border: null,
+      ),
       child: Scaffold(
         body: ListView(
           children: <Widget>[
@@ -108,5 +152,5 @@ class _LoginScreenState extends State<LoginScreen> with TickerProviderStateMixin
         ),
       ),
     );
-  }
+  }*/
 }

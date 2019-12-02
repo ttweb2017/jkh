@@ -50,6 +50,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
     double thirdHeadContainerWidth = (sSize.width / 2 + 15.0);
 
     return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        backgroundColor: Color(0xFF356736),
+        border: null,
+      ),
       child: Scaffold(
         body: ListView(
           children: <Widget>[
