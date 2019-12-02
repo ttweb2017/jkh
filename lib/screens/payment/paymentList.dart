@@ -43,81 +43,85 @@ class _PaymentListState extends State<PaymentList> {
 
     return Container(
       margin: const EdgeInsets.only(top: 25.0),
-      child: Center(
-        child: Stack(
-          alignment: Alignment.center,
-          children: <Widget>[
-            Container(
-              margin: EdgeInsets.only(top: 50.0, right: 30.0, bottom: 5.0, left: 30.0),
-              child: Center(
-                child: InputFieldArea(
-                  maxLen: 6,
-                  hint: "Tölegiň jemi TMT",
-                  obscure: false,
-                  icon: Icons.payment,
-                  inputActionType: TextInputAction.done,
-                  keyboardType: TextInputType.numberWithOptions(decimal: true),
-                  textController: _loginController,
-                ),
+      child: Column(
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.only(top: 50.0, right: 30.0, bottom: 5.0, left: 30.0),
+            child: Center(
+              child: InputFieldArea(
+                maxLen: 6,
+                hint: "Tölegiň jemi TMT",
+                obscure: false,
+                icon: Icons.payment,
+                inputActionType: TextInputAction.done,
+                keyboardType: TextInputType.numberWithOptions(decimal: true),
+                textController: _loginController,
               ),
             ),
-            RaisedButton(
-              child: Text("Tölemek"),
-              onPressed: _prePay,
-              textColor: Color(0xFF356736),
-              padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-              splashColor: Color(0xFF356736),
-            ),
-            Padding(
-                padding: EdgeInsets.symmetric(vertical: 5.0)
-            ),
-            ListView.builder(
-                shrinkWrap: true,
-                physics: ClampingScrollPhysics(),
-                itemCount: _payments.chargeList.length,
-                itemBuilder: (context, position) {
-                  return Column(
-                    children: <Widget>[
-                      ListTile(
-                        title: Text(
-                            '${_payments.chargeList[position].serviceName}',
-                            style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Color(0xFF356736))
-                        ),
-                        //subtitle: Text('${payments.chargeList[position].debt}'),
-                        trailing: Column(
-                          children: <Widget>[
-                            Container(
-                                child: CircleAvatar(
-                                  backgroundColor: Colors.white,
-                                  radius: 25.0,
-                                  child: Text(
-                                    "${_payments.chargeList[position].debt}" + Constants.CURRENCY,
-                                    style: TextStyle(
-                                      fontSize: 12.0,
-                                      fontWeight: FontWeight.bold,
-                                      color: Color(0xFF356736),
+          ),
+          RaisedButton(
+            child: Text("Tölemek"),
+            onPressed: _prePay,
+            textColor: Color(0xFF356736),
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+            splashColor: Color(0xFF356736),
+          ),
+          Padding(
+              padding: EdgeInsets.symmetric(vertical: 5.0)
+          ),
+          Center(
+            child: Stack(
+              alignment: Alignment.center,
+              children: <Widget>[
+                ListView.builder(
+                    shrinkWrap: true,
+                    physics: ClampingScrollPhysics(),
+                    itemCount: _payments.chargeList.length,
+                    itemBuilder: (context, position) {
+                      return Column(
+                        children: <Widget>[
+                          ListTile(
+                            title: Text(
+                                '${_payments.chargeList[position].serviceName}',
+                                style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, color: Color(0xFF356736))
+                            ),
+                            //subtitle: Text('${payments.chargeList[position].debt}'),
+                            trailing: Column(
+                              children: <Widget>[
+                                Container(
+                                    child: CircleAvatar(
+                                      backgroundColor: Colors.white,
+                                      radius: 25.0,
+                                      child: Text(
+                                        "${_payments.chargeList[position].debt}" + Constants.CURRENCY,
+                                        style: TextStyle(
+                                          fontSize: 12.0,
+                                          fontWeight: FontWeight.bold,
+                                          color: Color(0xFF356736),
+                                        ),
+                                        textAlign: TextAlign.center,
+                                      ),
                                     ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ),
-                                padding: const EdgeInsets.all(1.0), // border width
-                                decoration: new BoxDecoration(
-                                  border: Border.all(color: Color(0xFF356736)),
-                                  shape: BoxShape.circle,
+                                    padding: const EdgeInsets.all(1.0), // border width
+                                    decoration: new BoxDecoration(
+                                      border: Border.all(color: Color(0xFF356736)),
+                                      shape: BoxShape.circle,
+                                    )
                                 )
-                            )
-                          ],
-                        ),
-                        onTap: () => _onTapItem(context, _payments.chargeList[position]),
-                      ),
-                      Divider(height: 10.0),
-                    ],
-                  );
-                }
+                              ],
+                            ),
+                            onTap: () => _onTapItem(context, _payments.chargeList[position]),
+                          ),
+                          Divider(height: 10.0),
+                        ],
+                      );
+                    }
+                ),
+                _isLoading ? const CupertinoActivityIndicator(radius: 15.0) : Container()
+              ],
             ),
-            _isLoading ? const CupertinoActivityIndicator(radius: 15.0) : Container()
-          ],
-        ),
+          )
+        ],
       )
     );
   }
@@ -145,15 +149,14 @@ class _PaymentListState extends State<PaymentList> {
 
       if(response.statusCode == 200){
         var payment = json.decode(response.body);
-        paymentId = payment['PAYMENT_ID'];
-        print("PSYMENT ID::: " + paymentId.toString());
+        paymentId = payment['PAYMENT_ID'] != null ? payment['PAYMENT_ID'] : 0;
       }else{
         print("Payment Response code: " + response.statusCode.toString());
         Scaffold.of(context)
             .showSnackBar(SnackBar(content: Text('Serwerde ýalňyşlyk: Tölegi ýerleşdirip bolmady')));
       }
     }catch(e){
-      print("Connection exception: " + e.toString());
+      print("Connection exception on _fetchPaymentId(): " + e.toString());
       Scaffold.of(context)
           .showSnackBar(SnackBar(content: Text('Internet baglatyňyz kesildi')));
       setState(() {
