@@ -21,6 +21,7 @@ class Payment {
 
 
   factory Payment.fromJson(Map<String, dynamic> json) {
+    print(json['TKM_PAYMENT_CHARGES']);
     var charges = json['TKM_PAYMENT_CHARGES'] as List;
     List<Charge> chargeList = new List<Charge>();
 
