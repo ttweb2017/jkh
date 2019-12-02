@@ -47,7 +47,7 @@ class _PaymentListState extends State<PaymentList> {
         child: Column(
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(top: 50.0, right: 30.0, bottom: 5.0, left: 30.0),
+              margin: EdgeInsets.only(top: 5.0, right: 30.0, bottom: 5.0, left: 30.0),
               child: Center(
                 child: InputFieldArea(
                   maxLen: 6,
@@ -70,6 +70,7 @@ class _PaymentListState extends State<PaymentList> {
             Padding(
                 padding: EdgeInsets.symmetric(vertical: 5.0)
             ),
+            Divider(height: 10.0),
             Center(
               child: Stack(
                 alignment: Alignment.center,
