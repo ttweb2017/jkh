@@ -142,6 +142,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         backgroundColor: Color(0xFF356736),
+        border: null,
       ),
       child: Scaffold(
         body: GestureDetector(
