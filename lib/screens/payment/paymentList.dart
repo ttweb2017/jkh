@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ffi';
 import 'package:crypto/crypto.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -66,7 +67,7 @@ class _PaymentListState extends State<PaymentList> {
               ),
               RaisedButton(
                 child: Text("Tölemek"),
-                onPressed: _prePay,
+                onPressed: _prePay(context),
                 textColor: Color(0xFF356736),
                 padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                 splashColor: Color(0xFF356736),
@@ -132,10 +133,21 @@ class _PaymentListState extends State<PaymentList> {
     );
   }
 
-  _prePay(){
-    Scaffold.of(context)
-        .showSnackBar(SnackBar(content: Text("pay avans clicked: " + _loginController.text.trim())));
+  _prePay(BuildContext context){
+    /*Scaffold.of(context)
+        .showSnackBar(SnackBar(content: Text("pay avans clicked: " + _loginController.text.trim())));*/
+    FocusScope.of(context).requestFocus(new FocusNode());
     print("pay avans clicked: " + _loginController.text.trim());
+    Charge charge = Charge(
+      currencyTitle: "TMT",
+      debt: double.parse(_loginController.text.trim()),
+      meterId: "",
+      periodId: 0,
+      serviceId: 0,
+      serviceName: "Pre Payment"
+    );
+
+    _onTapItem(context, charge);
   }
 
   //Method to register an order in the server and return its id
