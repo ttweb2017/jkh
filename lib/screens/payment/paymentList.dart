@@ -151,6 +151,8 @@ class _PaymentListState extends State<PaymentList> {
       Scaffold.of(context)
           .showSnackBar(SnackBar(content: Text("Töleg jemi 0 TMT ýa da boş bolmaly däl!")));
     }
+
+    _loginController.clear();
   }
 
   //Method to register an order in the server and return its id
