@@ -60,35 +60,40 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
 
-    return CupertinoTabScaffold(
-      backgroundColor: Colors.green[800],
-      tabBar: CupertinoTabBar(
-        backgroundColor: Colors.green[800],
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.payment, size: 52.0, color: Colors.white),
-            activeIcon: Icon(Icons.payment, size: 52.0, color: Colors.orange[800])
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_box, size: 52.0, color: Colors.white),
-            activeIcon: Icon(Icons.account_box, size: 52.0, color: Colors.orange[800])
-          ),
-        ],
+    return CupertinoApp(
+      theme: CupertinoThemeData(
+        primaryColor: Colors.green[800]
       ),
-      tabBuilder: (BuildContext context, int index) {
-        assert(index >= 0 && index <= 1);
+      home: CupertinoTabScaffold(
+          backgroundColor: Colors.green[800],
+          tabBar: CupertinoTabBar(
+            backgroundColor: Colors.green[800],
+            items: <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.payment, size: 52.0, color: Colors.white),
+                  activeIcon: Icon(Icons.payment, size: 52.0, color: Colors.orange[800])
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.account_box, size: 52.0, color: Colors.white),
+                  activeIcon: Icon(Icons.account_box, size: 52.0, color: Colors.orange[800])
+              ),
+            ],
+          ),
+          tabBuilder: (BuildContext context, int index) {
+            assert(index >= 0 && index <= 1);
 
-        switch (index) {
-          case 0:
-            return PaymentScreen(returnUrl: _returnUrl);
-            break;
-          case 1:
-            return ProfileScreen();
-            break;
-        }
+            switch (index) {
+              case 0:
+                return PaymentScreen(returnUrl: _returnUrl);
+                break;
+              case 1:
+                return ProfileScreen();
+                break;
+            }
 
-        return null;
-      }
+            return null;
+          }
+      )
     );
   }
 }
