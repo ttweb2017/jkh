@@ -31,7 +31,7 @@ class Payment {
     chargeList.add(Charge(
       serviceName: "Jemi",
       serviceId: 0,
-      debt: double.parse(json['AMOUNT_TO_SHOW']),
+      debt: json['AMOUNT_TO_SHOW'] != null ? double.parse(json['AMOUNT_TO_SHOW']) : 0.0,
       currencyTitle: "TMT",
       periodId: 0,
       meterId: ""
@@ -41,7 +41,7 @@ class Payment {
         paymentSystem: json['PAY_SYSTEM'],
         paymentSystemId: int.parse(json['PAY_SYSTEM']['ID']),
         meterId: json['METER_ID'],
-        amount: double.parse(json['AMOUNT_TO_SHOW']),
+        amount: json['AMOUNT_TO_SHOW'] != null ? double.parse(json['AMOUNT_TO_SHOW']) : 0.0,
         lastPeriod: json['LAST_PERIOD'],
         accountNo: json['XML_ID'],
         chargeList: chargeList
