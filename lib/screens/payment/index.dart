@@ -41,17 +41,23 @@ class _PaymentScreenState extends State<PaymentScreen> {
   //Method to get payments list that user has to pay
   Future<Payment> _fetchPayment(String cookie) async {
     Payment payment;
-    final response = await http.get(
-        Constants.PAYMENT_URL,
-        headers: {"Cookie": cookie});
 
-    if (response.statusCode == 200) {
-      // If server returns an OK response, parse the JSON.
-      print("Payment List Response: " + response.body.toString());
-      payment = Payment.fromJson(json.decode(response.body));
-    } else {
-      // If that response was not OK, throw an error.
-      throw Exception('Failed to load users payment list');
+    try {
+      final response = await http.get(
+          Constants.PAYMENT_URL,
+          headers: {"Cookie": cookie});
+
+      if (response.statusCode == 200) {
+        // If server returns an OK response, parse the JSON.
+        payment = Payment.fromJson(json.decode(response.body));
+      } else {
+        // If that response was not OK, throw an error.
+        throw Exception('Failed to load users payment list');
+      }
+    }catch(e){
+      print("Payment List Connection error: " + e.toString());
+
+      _displaySnakBar(context, "Internet baglantyňyzy barlaň!");
     }
 
     return payment;
@@ -79,23 +85,12 @@ class _PaymentScreenState extends State<PaymentScreen> {
         Map<String, dynamic> data = json.decode(response.body);
 
         if (data['PAYED']) {
-          print(data.toString());
-          print("Tölegiňiz üstünlikli alyndy. Sag boluň!");
-
           msg = "Tölegiňiz üstünlikli alyndy. Sag boluň!'";
-
         }else{
-          print("Tölegiňiz geçmedi, täzeden barlaň!");
-          print("MSG: " + data['ERROR_MSG']);
-
           msg = "Tölegiňiz geçmedi, täzeden barlaň!'";
-
         }
       }else{
-        print("payment Status Response Code: " + response.statusCode.toString());
-
         msg = "Serwerde ýalňyşlyk: Tölegňizi barlap bolmady!'";
-
       }
 
       _displaySnakBar(context, msg);
@@ -113,8 +108,10 @@ class _PaymentScreenState extends State<PaymentScreen> {
   }
 
   _displaySnakBar(BuildContext context, String message){
-    final snackBar = SnackBar(content: Text(message));
-    _scaffoldKey.currentState.showSnackBar(snackBar);
+    /*final snackBar = SnackBar(content: Text(message));
+    _scaffoldKey.currentState.showSnackBar(snackBar);*/
+    Scaffold.of(context)
+        .showSnackBar(SnackBar(content: Text(message)));
   }
 
   @override
@@ -141,6 +138,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         backgroundColor: Color(0xFF356736),
+        leading: Text("<"),
         border: null,
       ),
       child: Scaffold(

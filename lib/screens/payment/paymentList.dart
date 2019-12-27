@@ -133,7 +133,6 @@ class _PaymentListState extends State<PaymentList> {
     /*Scaffold.of(context)
         .showSnackBar(SnackBar(content: Text("pay avans clicked: " + _loginController.text.trim())));*/
     //FocusScope.of(context).requestFocus(new FocusNode());
-    print("pay avans clicked: " + _loginController.text.trim());
 
     if(_loginController.text.trim().length != 0
         && double.parse(_loginController.text.trim()) != 0.0){
@@ -174,7 +173,6 @@ class _PaymentListState extends State<PaymentList> {
         var payment = json.decode(response.body);
         paymentId = payment['PAYMENT_ID'] != null ? payment['PAYMENT_ID'] : 0;
       }else{
-        print("Payment Response code: " + response.statusCode.toString());
         Scaffold.of(context)
             .showSnackBar(SnackBar(content: Text('Serwerde ýalňyşlyk: Tölegi ýerleşdirip bolmady')));
       }
@@ -214,7 +212,6 @@ class _PaymentListState extends State<PaymentList> {
       if(response.statusCode == 200){
         order = Order.fromJson(json.decode(response.body));
       }else{
-        print("Order Response code: " + response.statusCode.toString());
         Scaffold.of(context)
             .showSnackBar(SnackBar(content: Text('Serwerde ýalňyşlyk: Tölegiň nomerini alyp bolmady')));
       }
@@ -245,13 +242,13 @@ class _PaymentListState extends State<PaymentList> {
       return formUrl;
     }
 
-    final response = await http.get(url);
-
     try{
+      final response = await http.get(url);
+
       if(response.statusCode == 200){
         Map<String, dynamic> data = json.decode(response.body);
 
-        if (data['errorCode'] == 0) {
+        if (data['errorCode'] == "0") {
           formUrl = data['formUrl'];
 
           String sign = _getSign(order);
@@ -325,17 +322,17 @@ class _PaymentListState extends State<PaymentList> {
 
     String url = order.merchantBaseUrl;
     url += "/payment/rest/register.do";
-    url += "?currency" + order.merchantCurrency;
-    url += "&language" + order.merchantLanguage;
-    url += "&pageView" + order.merchantPageView;
-    url += "&description" + order.description;
-    url += "&orderNumber" + order.paymentId.toString();
-    url += "&failUrl" + failEncoded;
-    url += "&userName" + order.merchantId;
-    url += "&password" + order.merchantPassword;
-    url += "&amount" + amount.toString();
-    url += "&sessionTimeoutSecs" + order.sessionTimeoutSecs.toString();
-    url += "&returnUrl" + returnEncoded;
+    url += "?currency=" + order.merchantCurrency;
+    url += "&language=" + order.merchantLanguage;
+    url += "&pageView=" + order.merchantPageView;
+    url += "&description=" + order.description;
+    url += "&orderNumber=" + order.paymentId.toString();
+    url += "&failUrl=" + failEncoded;
+    url += "&userName=" + order.merchantId;
+    url += "&password=" + order.merchantPassword;
+    url += "&amount=" + amount.toString();
+    url += "&sessionTimeoutSecs=" + order.sessionTimeoutSecs.toString();
+    url += "&returnUrl=" + returnEncoded;
 
     return url;
   }
