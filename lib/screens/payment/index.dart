@@ -131,7 +131,7 @@ print("github cykmaly");
           CupertinoDialogAction(
             isDefaultAction: true,
             child: Text("OK"),
-            onPressed: ()=> Navigator.pop(context, 'Discard'),
+            onPressed: ()=> Navigator.of(context, rootNavigator: true).pop('Discard'),
           )
         ],
       ),
