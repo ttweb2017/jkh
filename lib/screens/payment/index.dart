@@ -75,7 +75,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
     url += "&origOrderId=" + paymentData[PaymentUtil.ORIG_ORDER];
     url += "&type=mobile";
     url += "&orderId=" + paymentData[PaymentUtil.ORDER_ID];
-print("github cykmaly");
+
     try{
       final response = await http.get(
           url,
@@ -93,7 +93,6 @@ print("github cykmaly");
         msg = "Serwerde ýalňyşlyk: Tölegňizi barlap bolmady!'";
       }
 
-      //_displaySnakBar(context, msg);
       _showAlertDialog(context,msg);
 
       return response;
@@ -102,7 +101,6 @@ print("github cykmaly");
       print("Connection error: " + e.toString());
       msg = "Internet baglantyňyzy barlaň!";
 
-      //_displaySnakBar(context, msg);
       _showAlertDialog(context, msg);
     }
 

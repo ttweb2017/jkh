@@ -86,7 +86,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
             switch (index) {
               case 0:
-                return PaymentScreen(returnUrl: "https://github.org");
+                return PaymentScreen(returnUrl: _returnUrl);
                 break;
               case 1:
                 return ProfileScreen();
