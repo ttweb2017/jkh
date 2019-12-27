@@ -94,7 +94,7 @@ print("github cykmaly");
       }
 
       //_displaySnakBar(context, msg);
-      _showAlertDialog(msg);
+      _showAlertDialog(context,msg);
 
       return response;
 
@@ -103,7 +103,7 @@ print("github cykmaly");
       msg = "Internet baglantyňyzy barlaň!";
 
       //_displaySnakBar(context, msg);
-      _showAlertDialog(msg);
+      _showAlertDialog(context, msg);
     }
 
     return null;
@@ -114,16 +114,27 @@ print("github cykmaly");
     _scaffoldKey.currentState.showSnackBar(snackBar);
   }
 
-  Widget _showAlertDialog(String msg){
-    return CupertinoAlertDialog(
-  	title: Text("Tölegiň ýagdaýy"),
-  	content: Text(msg),
-  	actions: <Widget>[
-    		CupertinoDialogAction(
-      			isDefaultAction: true,
-      			child: Text("OK"),
-    		)
- 	 ],
+  void showDialog(BuildContext context, Widget child){
+    showCupertinoDialog<String>(
+        context: context,
+        builder: (BuildContext context) => child,
+    );
+  }
+
+  void _showAlertDialog(BuildContext context, String msg){
+    showDialog(
+      context,
+      CupertinoAlertDialog(
+        title: Text("Tölegiň ýagdaýy"),
+        content: Text(msg),
+        actions: <Widget>[
+          CupertinoDialogAction(
+            isDefaultAction: true,
+            child: Text("OK"),
+            onPressed: ()=> print("OK Pressed"),
+          )
+        ],
+      ),
     );
   }
 
