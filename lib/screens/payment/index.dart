@@ -75,7 +75,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
     url += "&origOrderId=" + paymentData[PaymentUtil.ORIG_ORDER];
     url += "&type=mobile";
     url += "&orderId=" + paymentData[PaymentUtil.ORDER_ID];
-
+print("github cykmaly");
     try{
       final response = await http.get(
           url,
@@ -93,7 +93,8 @@ class _PaymentScreenState extends State<PaymentScreen> {
         msg = "Serwerde ýalňyşlyk: Tölegňizi barlap bolmady!'";
       }
 
-      _displaySnakBar(context, msg);
+      //_displaySnakBar(context, msg);
+      _showAlertDialog(msg);
 
       return response;
 
@@ -101,17 +102,29 @@ class _PaymentScreenState extends State<PaymentScreen> {
       print("Connection error: " + e.toString());
       msg = "Internet baglantyňyzy barlaň!";
 
-      _displaySnakBar(context, msg);
+      //_displaySnakBar(context, msg);
+      _showAlertDialog(msg);
     }
 
     return null;
   }
 
   _displaySnakBar(BuildContext context, String message){
-    /*final snackBar = SnackBar(content: Text(message));
-    _scaffoldKey.currentState.showSnackBar(snackBar);*/
-    Scaffold.of(context)
-        .showSnackBar(SnackBar(content: Text(message)));
+    final snackBar = SnackBar(content: Text(message));
+    _scaffoldKey.currentState.showSnackBar(snackBar);
+  }
+
+  Widget _showAlertDialog(String msg){
+    return CupertinoAlertDialog(
+  	title: Text("Tölegiň ýagdaýy"),
+  	content: Text(msg),
+  	actions: <Widget>[
+    		CupertinoDialogAction(
+      			isDefaultAction: true,
+      			child: Text("OK"),
+    		)
+ 	 ],
+    );
   }
 
   @override
@@ -138,7 +151,6 @@ class _PaymentScreenState extends State<PaymentScreen> {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         backgroundColor: Color(0xFF356736),
-        leading: Text("<"),
         border: null,
       ),
       child: Scaffold(

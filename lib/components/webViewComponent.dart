@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:halkbank_app/constants.dart';
-import 'package:halkbank_app/screens/payment/index.dart';
+import 'package:halkbank_app/screens/home/index.dart';
 
 class WebViewComponent extends StatefulWidget {
   final String url;
@@ -34,7 +34,7 @@ class _WebViewComponentState extends State<WebViewComponent> {
         Navigator.push(
             context,
             CupertinoPageRoute(
-                builder: (context) => PaymentScreen(returnUrl: url)
+                builder: (context) => HomeScreen(returnUrl: url)
             )
         );
       }
